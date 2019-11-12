@@ -138,6 +138,7 @@
  }
 
 
+
  @media (min-width: 360px) {
      .buttons {
          max-width: 100%;
@@ -208,12 +209,10 @@
      }
 
      .toRight {
-
          transform: translateX(25%);
      }
 
      .toLeft {
-
          transform: translateX(-25%);
      }
  }
