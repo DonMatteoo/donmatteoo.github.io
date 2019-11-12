@@ -18,7 +18,9 @@ let text = {
     aiWinRound: 'Computer win round!',
     playerWinMatch: 'You win match!',
     aiWinMatch: 'Computer win Match!',
-
+    playerHit: 'You hit enemy.',
+    enemyHit: 'Enemy hit You',
+    draw: 'You block enemy hit',
 
 }
 
@@ -80,14 +82,14 @@ const checkWin = () => {
 const checkResults = () => {
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
-        resultPlace.textContent = 'You win! Contrgatulations.';
+        resultPlace.textContent = text.playerHit;
         actualAiHealth -= 10;
         computerHealthBar.style.left = `-${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
-        resultPlace.textContent = 'Draw. Try Again';
+        resultPlace.textContent = text.draw;
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
-        resultPlace.textContent = 'Sorry, Enemy win. Try again';
+        resultPlace.textContent = text.enemyHit;
         actualPlayerHealth -= 10;
         playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     }
@@ -95,15 +97,11 @@ const checkResults = () => {
     document.querySelector('.playerScore').textContent = playerScore;
     document.querySelector('.computerScore').textContent = computerScore;
 
-
-
     for (let i = 0; i < allBtns.length; i++) {
         allBtns[i].removeAttribute('disabled');
     }
 
     checkWin();
-
-
 
 }
 
