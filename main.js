@@ -36,7 +36,7 @@ const compChoose = () => {
         document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
     }
 
-    document.querySelector('.computerChooseField h2').textContent = `Computer Choosed ${computerChoosed}`;
+    document.querySelector('.computerChooseField h2').textContent = `Enemy Choosed ${computerChoosed}`;
     setTimeout(checkResults, 1000);
 }
 
@@ -44,7 +44,7 @@ const checkWin = () => {
     //check who win match
     if (actualPlayerHealth == 0 || actualAiHealth == 0) {
         if (actualPlayerHealth == 0) {
-            alert('Computer win round.');
+            alert('Enemy win round.');
             computerScore++;
             document.querySelector('.computerScore').textContent = computerScore;
         } else if (actualAiHealth == 0) {
@@ -63,7 +63,7 @@ const checkWin = () => {
     //Check who win Match
     if (computerScore == 2 || playerScore == 2) {
         if (computerScore == 2) {
-            alert('Computer win match.');
+            alert('Enemy win match.');
             computerScore = 0;
             playerScore = 0;
 
@@ -87,7 +87,7 @@ const checkResults = () => {
         resultPlace.textContent = 'Draw. Try Again';
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
-        resultPlace.textContent = 'Sorry, Computer win. Try again';
+        resultPlace.textContent = 'Sorry, Enemy win. Try again';
         actualPlayerHealth -= 10;
         playerHealthBar.style.width = `${actualPlayerHealth}%`;
     }
