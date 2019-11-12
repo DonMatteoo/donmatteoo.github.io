@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors the Game</title>
+    <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <section class="scores">
+        <div class="yourScore">
+            <p>Win round:</p>
+            <h1 class="playerScore">0</h1>
+            <p>Your health:</p>
+            <div class="health"></div>
+        </div>
+        <div class="aiScore">
+            <p>Win round:</p>
+            <h1 class="computerScore">0</h1>
+            <p>Enemy health:</p>
+            <div class="health"></div>
+        </div>
+    </section>
+
+    <h2 class="result">Who win? </h2>
+
+    <section class="battlefield">
+        <div class="playerChooseField">
+            <img class="rockImg" src="img/rock.png" alt="rock">
+            <img class="paperImg" src="img/paper.png" alt="paper">
+            <img class="scissorsImg" src="img/scissors.png" alt="scissors">
+            <h2></h2>
+        </div>
+
+        <div class="computerChooseField">
+            <img class="rockImg" src="img/rockComp.png" alt="rock">
+            <img class="paperImg" src="img/paperComp.png" alt="paper">
+            <img class="scissorsImg" src="img/scissorsComp.png" alt="scissors">
+            <h2></h2>
+        </div>
+
+    </section>
+
+    <div class="buttons">
+        <button class="rock">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+    </div>
+
+    <button class="reset">Reset Score</button>
+
+    <script src="main.js"></script>
+
+</body>
+
+</html>

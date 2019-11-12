@@ -1,0 +1,137 @@
+ /*        font-family: 'McLaren', cursive;*/
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     color: #fff;
+     font-family: 'McLaren', cursive;
+ }
+
+ body {
+     background-color: #275080;
+ }
+
+ button {
+     padding: 10px;
+     border: 2px solid #fff;
+     color: #fff;
+     background-color: transparent;
+     margin: 10px 20px;
+     transition: 0.2s;
+     width: 100px;
+ }
+
+ button:hover {
+     color: #275080;
+     background-color: #fff;
+     cursor: pointer;
+ }
+
+ .buttons {
+     position: absolute;
+     bottom: 20px;
+     left: 50%;
+     transform: translateX(-50%);
+     max-width: 60%;
+     display: flex;
+     justify-content: space-between;
+     z-index: 1;
+ }
+
+ .reset {
+     display: block;
+     position: absolute;
+     bottom: 30px;
+     right: 30px;
+
+ }
+
+ .battlefield {
+     width: 90%;
+     margin: 0 auto;
+     display: flex;
+     justify-content: center;
+     height: 50vh;
+ }
+
+ .battlefield div {
+     padding: 20px;
+ }
+
+ .playerChooseField,
+ .computerChooseField {
+     position: relative;
+     width: 50%;
+     transition: 0.5s;
+ }
+
+ .playerChooseField img,
+ .computerChooseField img {
+     opacity: 0;
+     transition: 0.5s;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     transition: 0.5s;
+
+ }
+
+ .playerChooseField h2,
+ .computerChooseField h2 {
+     position: absolute;
+     bottom: -20px;
+     left: 50%;
+     transform: translateX(-50%);
+     margin: 20px;
+ }
+
+ .playerChooseField img.active,
+ .computerChooseField img.active {
+     opacity: 1;
+ }
+
+
+ .scores {
+     width: 90%;
+     margin: 0 auto;
+     display: flex;
+     justify-content: space-between;
+ }
+
+ .aiScore {
+     text-align: right;
+ }
+
+ .yourScore,
+ .aiScore {
+     width: 200px;
+ }
+
+ .result {
+     text-align: center;
+     padding: 10px;
+
+ }
+
+ .active {
+     display: block;
+ }
+
+ .toRight {
+
+     transform: translateX(50%);
+ }
+
+ .toLeft {
+
+     transform: translateX(-50%);
+ }
+
+ .health {
+     width: 100%;
+     height: 20px;
+     background-color: #fff;
+
+ }
