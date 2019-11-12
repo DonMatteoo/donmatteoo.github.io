@@ -22,19 +22,6 @@ let text = {
 
 }
 
-const resetGame = (e) => {
-    e.preventDefault();
-    alert('You reset match and score');
-    playerScore = 0;
-    computerScore = 0;
-    document.querySelector('.playerScore').textContent = playerScore;
-    document.querySelector('.computerScore').textContent = computerScore;
-    actualPlayerHealth = 100;
-    actualAiHealth = 100;
-    playerHealthBar.style.width = `${actualPlayerHealth}%`;
-    computerHealthBar.style.width = `${actualAiHealth}%`;
-    resultPlace.textContent = 'Who win?';
-}
 
 
 const compChoose = () => {
@@ -78,7 +65,6 @@ const checkResults = () => {
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = 'You win! Contrgatulations.';
-        //        playerScore++;
         actualAiHealth -= 10;
         computerHealthBar.style.width = `${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
@@ -86,7 +72,6 @@ const checkResults = () => {
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = 'Sorry, Computer win. Try again';
-        //        computerScore++;
         actualPlayerHealth -= 10;
         playerHealthBar.style.width = `${actualPlayerHealth}%`;
     }
@@ -165,4 +150,16 @@ document.querySelector('.scissors').addEventListener('click', (e) => {
     setTimeout(compChoose, 2000);
 });
 
-document.querySelector('.reset').addEventListener('click', resetGame);
+document.querySelector('.reset').addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('You reset match and score');
+    playerScore = 0;
+    computerScore = 0;
+    document.querySelector('.playerScore').textContent = playerScore;
+    document.querySelector('.computerScore').textContent = computerScore;
+    actualPlayerHealth = 100;
+    actualAiHealth = 100;
+    playerHealthBar.style.width = `${actualPlayerHealth}%`;
+    computerHealthBar.style.width = `${actualAiHealth}%`;
+    resultPlace.textContent = 'Who win?';
+});
