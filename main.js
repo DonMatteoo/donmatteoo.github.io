@@ -108,12 +108,12 @@ const checkResults = () => {
 
     if (computerScore == 2) {
         alert('Computer win match.');
-        resetGame();
+        resetGame(e);
 
 
     } else if (playerScore == 2) {
         alert('You win match!');
-        resetGame();
+        resetGame(e);
     }
 
 
