@@ -20,7 +20,7 @@ let text = {
     aiWinMatch: 'Computer win Match!',
     playerHit: 'You hit enemy.',
     enemyHit: 'Enemy hit You',
-    draw: 'You block enemy hit',
+    draw: 'Enemy block your atack',
 
 }
 
@@ -46,11 +46,11 @@ const checkWin = () => {
     //check who win match
     if (actualPlayerHealth == 0 || actualAiHealth == 0) {
         if (actualPlayerHealth == 0) {
-            resultPlace.textContent = text.playerWinRound;
+            resultPlace.textContent = text.aiWinRound;
             computerScore++;
             document.querySelector('.computerScore').textContent = computerScore;
         } else if (actualAiHealth == 0) {
-            resultPlace.textContent = text.aiWinRound;
+            resultPlace.textContent = text.playerWinRound;
             playerScore++;
             document.querySelector('.playerScore').textContent = playerScore;
 
