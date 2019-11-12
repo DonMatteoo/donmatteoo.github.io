@@ -22,6 +22,20 @@ let text = {
 
 }
 
+const resetGame = (e) => {
+    e.preventDefault();
+    alert('You reset match and score');
+    playerScore = 0;
+    computerScore = 0;
+    document.querySelector('.playerScore').textContent = playerScore;
+    document.querySelector('.computerScore').textContent = computerScore;
+    actualPlayerHealth = 100;
+    actualAiHealth = 100;
+    playerHealthBar.style.width = `${actualPlayerHealth}%`;
+    computerHealthBar.style.width = `${actualAiHealth}%`;
+    resultPlace.textContent = 'Who win?';
+}
+
 
 const compChoose = () => {
     let index = Math.floor(Math.random() * option.length);
@@ -94,8 +108,12 @@ const checkResults = () => {
 
     if (computerScore == 2) {
         alert('Computer win match.');
+        resetGame();
+
+
     } else if (playerScore == 2) {
         alert('You win match!');
+        resetGame();
     }
 
 
@@ -145,16 +163,4 @@ document.querySelector('.scissors').addEventListener('click', (e) => {
     setTimeout(compChoose, 2000);
 });
 
-document.querySelector('.reset').addEventListener('click', (e) => {
-    e.preventDefault();
-    alert('You reset match and score');
-    playerScore = 0;
-    computerScore = 0;
-    document.querySelector('.playerScore').textContent = playerScore;
-    document.querySelector('.computerScore').textContent = computerScore;
-    actualPlayerHealth = 100;
-    actualAiHealth = 100;
-    playerHealthBar.style.width = `${actualPlayerHealth}%`;
-    computerHealthBar.style.width = `${actualAiHealth}%`;
-    resultPlace.textContent = 'Who win?';
-});
+document.querySelector('.reset').addEventListener('click', resetGame);
