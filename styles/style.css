@@ -220,6 +220,12 @@
          width: 100%;
      }
 
+     .yourScore,
+     .aiScore {
+         width: 45%;
+     }
+
+
      .computerChooseField img,
      .playerChooseField img {
          width: 70%;
