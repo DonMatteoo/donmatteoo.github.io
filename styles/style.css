@@ -135,3 +135,48 @@
      background-color: #fff;
 
  }
+
+
+ @media (max-width: 360px) {
+     .buttons {
+         max-width: 100%;
+     }
+
+     button {
+         margin: 10px;
+     }
+
+
+     .reset {
+         right: 0;
+         bottom: 70px;
+         width: 120px;
+     }
+
+     .computerChooseField img,
+     .playerChooseField img {
+         width: 80%;
+     }
+
+     .computerChooseField h2,
+     .playerChooseField h2 {
+         padding: 10px;
+         font-size: 20px;
+         margin: 0;
+     }
+
+     .toRight {
+
+         transform: translateX(25%);
+     }
+
+     .toLeft {
+
+         transform: translateX(-25%);
+     }
+
+     .result {
+         font-size: 18px;
+     }
+
+ }
