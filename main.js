@@ -9,8 +9,8 @@ let actualAiHealth = 100;
 
 const resultPlace = document.querySelector('.result');
 const allBtns = document.querySelectorAll('.buttons button');
-const playerHealthBar = document.querySelector('.yourScore .health');
-const computerHealthBar = document.querySelector('.aiScore .health');
+const playerHealthBar = document.querySelector('.yourScore .health .playerHit');
+const computerHealthBar = document.querySelector('.aiScore .health .enemyHit');
 
 let text = {
 
@@ -56,8 +56,8 @@ const checkWin = () => {
 
         actualPlayerHealth = 100;
         actualAiHealth = 100;
-        playerHealthBar.style.width = `${actualPlayerHealth}%`;
-        computerHealthBar.style.width = `${actualAiHealth}%`;
+        playerHealthBar.style.right = `-${actualPlayerHealth}%`;
+        computerHealthBar.style.left = `-${actualAiHealth}%`;
     }
 
     //Check who win Match
@@ -82,14 +82,14 @@ const checkResults = () => {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = 'You win! Contrgatulations.';
         actualAiHealth -= 10;
-        computerHealthBar.style.width = `${actualAiHealth}%`;
+        computerHealthBar.style.left = `-${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
         resultPlace.textContent = 'Draw. Try Again';
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = 'Sorry, Enemy win. Try again';
         actualPlayerHealth -= 10;
-        playerHealthBar.style.width = `${actualPlayerHealth}%`;
+        playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     }
 
     document.querySelector('.playerScore').textContent = playerScore;
@@ -158,7 +158,7 @@ document.querySelector('.reset').addEventListener('click', (e) => {
     document.querySelector('.computerScore').textContent = computerScore;
     actualPlayerHealth = 100;
     actualAiHealth = 100;
-    playerHealthBar.style.width = `${actualPlayerHealth}%`;
-    computerHealthBar.style.width = `${actualAiHealth}%`;
+    playerHealthBar.style.right = `-${actualPlayerHealth}%`;
+    computerHealthBar.style.left = `-${actualAiHealth}%`;
     resultPlace.textContent = 'Who win?';
 });

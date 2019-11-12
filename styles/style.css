@@ -146,6 +146,7 @@
      height: 20px;
      left: -100%;
      background-color: #ea0032;
+     transition: .5s;
  }
 
  .health .playerHit {
@@ -154,6 +155,7 @@
      height: 20px;
      right: -100%;
      background-color: #ea0032;
+     transition: .5s;
  }
 
 
