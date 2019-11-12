@@ -50,7 +50,7 @@ const checkWin = () => {
             computerScore++;
             document.querySelector('.computerScore').textContent = computerScore;
         } else if (actualAiHealth == 0) {
-            aresultPlace.textContent = text.aiWinRound;
+            resultPlace.textContent = text.aiWinRound;
             playerScore++;
             document.querySelector('.playerScore').textContent = playerScore;
 
