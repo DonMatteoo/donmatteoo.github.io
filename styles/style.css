@@ -42,8 +42,9 @@
  .reset {
      display: block;
      position: absolute;
-     bottom: 30px;
-     right: 30px;
+     top: 5px;
+     left: 50%;
+     transform: translateX(-50%);
 
  }
 
@@ -148,8 +149,9 @@
 
 
      .reset {
-         right: 0;
-         bottom: 70px;
+         left: 50%;
+         transform: translateX(-50%);
+         top: 0px;
          width: 120px;
      }
 
@@ -179,4 +181,17 @@
          font-size: 18px;
      }
 
+     .scores {
+         width: 95%;
+     }
+
+     .yourScore,
+     .aiScore {
+         width: 45%;
+     }
+
+ }
+
+ @media (min-width: 361px) {
+     .reset {}
  }
