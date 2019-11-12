@@ -46,11 +46,11 @@ const checkWin = () => {
     //check who win match
     if (actualPlayerHealth == 0 || actualAiHealth == 0) {
         if (actualPlayerHealth == 0) {
-            alert('Enemy win round.');
+            resultPlace.textContent = text.playerWinRound;
             computerScore++;
             document.querySelector('.computerScore').textContent = computerScore;
         } else if (actualAiHealth == 0) {
-            alert('You win round.');
+            aresultPlace.textContent = text.aiWinRound;
             playerScore++;
             document.querySelector('.playerScore').textContent = playerScore;
 
