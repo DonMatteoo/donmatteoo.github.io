@@ -138,7 +138,7 @@
  }
 
 
- @media (max-width: 360px) {
+ @media (min-width: 360px) {
      .buttons {
          max-width: 100%;
      }
@@ -193,5 +193,27 @@
  }
 
  @media (min-width: 361px) {
-     .reset {}
+     .battlefield {
+         height: 40vh;
+         width: 100%;
+     }
+
+     .computerChooseField img,
+     .playerChooseField img {
+         width: 70%;
+     }
+
+     .buttons {
+         bottom: 0;
+     }
+
+     .toRight {
+
+         transform: translateX(25%);
+     }
+
+     .toLeft {
+
+         transform: translateX(-25%);
+     }
  }
