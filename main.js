@@ -59,6 +59,20 @@ const checkWin = () => {
         playerHealthBar.style.width = `${actualPlayerHealth}%`;
         computerHealthBar.style.width = `${actualAiHealth}%`;
     }
+
+
+    if (computerScore == 2) {
+        alert('Computer win match.');
+        computerScore = 0;
+        playerScore = 0;
+
+
+    } else if (playerScore == 2) {
+        alert('You win match!');
+        computerScore = 0;
+        playerScore = 0;
+    }
+
 }
 
 const checkResults = () => {
@@ -86,22 +100,7 @@ const checkResults = () => {
     }
 
     checkWin();
-    //Check who win round
-
-
-
-
-    if (computerScore == 2) {
-        alert('Computer win match.');
-        computerScore = 0;
-        playerScore = 0;
-
-
-    } else if (playerScore == 2) {
-        alert('You win match!');
-        computerScore = 0;
-        playerScore = 0;
-    }
+    //Check who win Match
 
 
 }
@@ -123,8 +122,6 @@ for (const button of allBtns) {
         document.querySelector('.playerChooseField').classList.remove('toRight');
         document.querySelector('.computerChooseField').classList.remove('toLeft');
     });
-
-
 }
 
 
