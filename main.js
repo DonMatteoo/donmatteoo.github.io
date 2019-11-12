@@ -60,19 +60,21 @@ const checkWin = () => {
         computerHealthBar.style.width = `${actualAiHealth}%`;
     }
 
+    //Check who win Match
+    if (computerScore == 2 || playerScore == 2) {
+        if (computerScore == 2) {
+            alert('Computer win match.');
+            computerScore = 0;
+            playerScore = 0;
 
-    if (computerScore == 2) {
-        alert('Computer win match.');
-        computerScore = 0;
-        playerScore = 0;
 
+        } else if (playerScore == 2) {
+            alert('You win match!');
+            computerScore = 0;
+            playerScore = 0;
+        }
 
-    } else if (playerScore == 2) {
-        alert('You win match!');
-        computerScore = 0;
-        playerScore = 0;
     }
-
 }
 
 const checkResults = () => {
@@ -100,7 +102,7 @@ const checkResults = () => {
     }
 
     checkWin();
-    //Check who win Match
+
 
 
 }
