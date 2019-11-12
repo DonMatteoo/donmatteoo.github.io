@@ -246,7 +246,7 @@
      }
  }
 
- @media (max-width: 641px) {
+ @media (max-width:769px) {
 
 
      .yourScore,
@@ -254,4 +254,50 @@
          width: 45%;
      }
 
+     .computerChooseField img,
+     .playerChooseField img {
+         width: 70%;
+     }
+
+     .toRight {
+         transform: translateX(40%);
+     }
+
+     .toLeft {
+         transform: translateX(-40%);
+     }
+
+ }
+
+ @media (max-width:1025px) {
+
+
+     .yourScore,
+     .aiScore {
+         width: 300px;
+     }
+
+     .computerChooseField img,
+     .playerChooseField img {
+         width: 70%;
+     }
+
+     .toRight {
+         transform: translateX(35%);
+     }
+
+     .toLeft {
+         transform: translateX(-35%);
+     }
+
+ }
+
+ @media (max-width:1401px) {
+     .toRight {
+         transform: translateX(30%);
+     }
+
+     .toLeft {
+         transform: translateX(-30%);
+     }
  }
