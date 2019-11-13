@@ -23,9 +23,9 @@ let text = {
     aiWinRound: 'Computer win round!',
     playerWinMatch: 'You win match!',
     aiWinMatch: 'Computer win Match!',
-    playerHit: ['You hit enemy.', 'Your enemy has not chance to block', 'Beautiful, that\'s be great attack'],
-    enemyHit: ['Enemy hit You', 'Sorry, enemy kick your ass'],
-    draw: ['Enemy block your attack', 'You block enemy hit', 'You and Enemy block hits'],
+    playerHit: ['You hit enemy.', 'Your enemy has not chance to block', 'Beautiful, that\'s be great attack', 'You be a master, kill enemy!'],
+    enemyHit: ['Enemy hit You', 'Sorry, enemy kick your ass...', 'What\'s wrong with You? Computer hit your face!', 'Haha, are you be a little girl?'],
+    draw: ['Enemy block your attack', 'You block enemy hit', 'You and Enemy block hits', 'Again draw? Booooooring...'],
 
 }
 
@@ -92,7 +92,12 @@ const checkResults = () => {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
         actualAiHealth -= randomHitDamage;
-        computerHitShow.textContent = `${randomHitDamage} hit`;
+        if (randomHitDamage == maxHitDamage) {
+            computerHitShow.textContent = `CRITICAL HIT! ${randomHitDamage}`;
+        } else {
+            computerHitShow.textContent = `${randomHitDamage} hit`;
+        }
+
         computerHitShow.classList.add('animationHitValue');
         computerHealthBar.style.left = `-${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
@@ -101,7 +106,11 @@ const checkResults = () => {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit[Math.floor(Math.random() * text.enemyHit.length)];
         actualPlayerHealth -= randomHitDamage;
-        playerHitShow.textContent = `${randomHitDamage} hit`;
+        if (randomHitDamage == maxHitDamage) {
+            playerHitShow.textContent = `CRITICAL HIT! ${randomHitDamage}`;
+        } else {
+            playerHitShow.textContent = `${randomHitDamage} hit`;
+        }
         playerHitShow.classList.add('animationHitValue');
         playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     }
