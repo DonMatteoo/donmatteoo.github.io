@@ -8,6 +8,7 @@ let actualPlayerHealth = 100;
 let actualAiHealth = 100;
 let maxHitDamage = 15;
 let minHitDamage = 5;
+let maxRoundValue = 2;
 
 
 const resultPlace = document.querySelector('.result');
@@ -18,6 +19,9 @@ const playerHitShow = document.querySelector('.playerChooseField .showHitValue')
 const computerHitShow = document.querySelector('.computerChooseField .showHitValue');
 const menuButton = document.querySelector('.menu i');
 const menuContent = document.querySelector('.contentMenu');
+const roundNumberOptions = document.querySelector('.roundNumberOptions');
+const saveOptionsButton = document.querySelector('.saveOptions');
+
 
 let text = {
 
@@ -31,6 +35,9 @@ let text = {
 
 }
 
+const saveOptions = () => {
+    maxRoundValue = roundNumberOptions.value;
+}
 const showMenu = () => {
     menuContent.classList.toggle('active');
 }
@@ -73,14 +80,14 @@ const checkWin = () => {
     }
 
     //Check who win Match
-    if (computerScore == 2 || playerScore == 2) {
-        if (computerScore == 2) {
+    if (computerScore == maxRoundValue || playerScore == maxRoundValue) {
+        if (computerScore == maxRoundValue) {
             alert('Enemy win match.');
             computerScore = 0;
             playerScore = 0;
 
 
-        } else if (playerScore == 2) {
+        } else if (playerScore == maxRoundValue) {
             alert('You win match!');
             computerScore = 0;
             playerScore = 0;
@@ -196,3 +203,4 @@ document.querySelector('.reset').addEventListener('click', (e) => {
 });
 
 menuButton.addEventListener('click', showMenu);
+saveOptionsButton.addEventListener('click', saveOptions);
