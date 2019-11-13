@@ -6,6 +6,9 @@ let playerScore = 0;
 let computerScore = 0;
 let actualPlayerHealth = 100;
 let actualAiHealth = 100;
+let maxHitDamage = 15;
+let minHitDamage = 5;
+
 
 const resultPlace = document.querySelector('.result');
 const allBtns = document.querySelectorAll('.buttons button');
@@ -43,13 +46,14 @@ const compChoose = () => {
 }
 
 const checkWin = () => {
+
     //check who win match
-    if (actualPlayerHealth == 0 || actualAiHealth == 0) {
-        if (actualPlayerHealth == 0) {
+    if (actualPlayerHealth <= 0 || actualAiHealth <= 0) {
+        if (actualPlayerHealth <= 0) {
             resultPlace.textContent = text.aiWinRound;
             computerScore++;
             document.querySelector('.computerScore').textContent = computerScore;
-        } else if (actualAiHealth == 0) {
+        } else if (actualAiHealth <= 0) {
             resultPlace.textContent = text.playerWinRound;
             playerScore++;
             document.querySelector('.playerScore').textContent = playerScore;
@@ -80,17 +84,24 @@ const checkWin = () => {
 }
 
 const checkResults = () => {
+    let randomHitDamage = Math.floor(Math.random() * (maxHitDamage - minHitDamage + 1) + minHitDamage);
+
+
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit;
-        actualAiHealth -= 10;
+        //        actualAiHealth -= 10;
+        actualAiHealth -= randomHitDamage;
+        console.log(randomHitDamage);
         computerHealthBar.style.left = `-${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
         resultPlace.textContent = text.draw;
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit;
-        actualPlayerHealth -= 10;
+        //        actualPlayerHealth -= 10;
+        actualPlayerHealth -= randomHitDamage;
+        console.log(randomHitDamage);
         playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     }
 
