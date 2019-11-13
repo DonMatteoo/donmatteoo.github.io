@@ -16,6 +16,8 @@ const playerHealthBar = document.querySelector('.yourScore .health .playerHit');
 const computerHealthBar = document.querySelector('.aiScore .health .enemyHit');
 const playerHitShow = document.querySelector('.playerChooseField .showHitValue');
 const computerHitShow = document.querySelector('.computerChooseField .showHitValue');
+const menuButton = document.querySelector('.menu i');
+const menuContent = document.querySelector('.contentMenu');
 
 let text = {
 
@@ -29,7 +31,9 @@ let text = {
 
 }
 
-
+const showMenu = () => {
+    menuContent.classList.toggle('active');
+}
 
 const compChoose = () => {
     let index = Math.floor(Math.random() * option.length);
@@ -190,3 +194,5 @@ document.querySelector('.reset').addEventListener('click', (e) => {
     computerHealthBar.style.left = `-${actualAiHealth}%`;
     resultPlace.textContent = 'Who win?';
 });
+
+menuButton.addEventListener('click', showMenu);

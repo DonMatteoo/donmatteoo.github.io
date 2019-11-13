@@ -10,6 +10,7 @@
 
  body {
      background-color: #275080;
+     overflow-x: hidden;
  }
 
  button {
@@ -39,15 +40,7 @@
      z-index: 1;
  }
 
- .reset {
-     display: block;
-     position: absolute;
-     top: 5px;
-     left: 50%;
-     transform: translateX(-50%);
-     margin: 0 auto;
 
- }
 
  .battlefield {
      width: 90%;
@@ -80,16 +73,6 @@
 
  }
 
- /*
- .playerChooseField h2,
- .computerChooseField h2 {
-     position: absolute;
-     bottom: -20px;
-     left: 50%;
-     transform: translateX(-50%);
-     margin: 20px;
- }
-*/
 
  .playerChooseField img.active,
  .computerChooseField img.active {
@@ -194,7 +177,43 @@
      transform: translateX(-50%);
  }
 
+ /*main menu*/
 
+ .menu {
+     position: absolute;
+     width: 30%;
+     right: 0;
+     bottom: 0;
+ }
+
+ .menu i {
+     position: absolute;
+     right: 10px;
+     bottom: 10px;
+     font-size: 30px;
+     transition: .5s;
+ }
+
+ .menu i:hover {
+     transform: rotateZ(360deg);
+     cursor: pointer;
+ }
+
+ .contentMenu {
+     position: absolute;
+     right: -100%;
+     transition: .3s;
+ }
+
+ .contentMenu.active {
+     right: 0;
+ }
+
+ .reset {
+     position: absolute;
+     bottom: 50px;
+     right: 10px;
+ }
 
 
 
