@@ -59,7 +59,6 @@ const checkWin = () => {
             resultPlace.textContent = text.playerWinRound;
             playerScore++;
             document.querySelector('.playerScore').textContent = playerScore;
-
         }
 
         actualPlayerHealth = 100;
@@ -92,9 +91,7 @@ const checkResults = () => {
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit;
-
         actualAiHealth -= randomHitDamage;
-
         computerHitShow.textContent = `${randomHitDamage} hit`;
         computerHitShow.classList.add('animationHitValue');
         computerHealthBar.style.left = `-${actualAiHealth}%`;
@@ -103,9 +100,7 @@ const checkResults = () => {
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit;
-
         actualPlayerHealth -= randomHitDamage;
-
         playerHitShow.textContent = `${randomHitDamage} hit`;
         playerHitShow.classList.add('animationHitValue');
         playerHealthBar.style.right = `-${actualPlayerHealth}%`;
