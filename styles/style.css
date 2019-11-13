@@ -188,8 +188,8 @@
 
  .menu i {
      position: absolute;
-     right: 10px;
-     bottom: 10px;
+     right: 20px;
+     bottom: 20px;
      font-size: 30px;
      transition: .5s;
  }
@@ -203,6 +203,7 @@
      position: absolute;
      right: -100%;
      transition: .3s;
+     overflow: hidden;
  }
 
  .contentMenu.active {
@@ -211,15 +212,16 @@
 
  .reset {
      position: absolute;
-     bottom: 50px;
+     bottom: 60px;
      right: 10px;
  }
 
-
-
-
-
-
+ .roundNumbers {
+     position: absolute;
+     bottom: 100px;
+     right: 10px;
+     width: 100px;
+ }
 
 
 
