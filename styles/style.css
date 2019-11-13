@@ -203,7 +203,7 @@
      position: absolute;
      right: -100%;
      transition: .3s;
-     overflow: hidden;
+
  }
 
  .contentMenu.active {
@@ -216,12 +216,7 @@
      right: 10px;
  }
 
- .roundNumbers {
-     position: absolute;
-     bottom: 100px;
-     right: 10px;
-     width: 100px;
- }
+
 
 
 
