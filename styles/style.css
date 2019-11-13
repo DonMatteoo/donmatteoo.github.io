@@ -251,6 +251,12 @@
      margin: 10px;
  }
 
+ .saveOptions:hover {
+     cursor: pointer;
+     background: #fff;
+     color: #275080;
+ }
+
 
 
 
