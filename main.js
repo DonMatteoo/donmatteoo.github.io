@@ -25,7 +25,7 @@ let text = {
     aiWinMatch: 'Computer win Match!',
     playerHit: ['You hit enemy.', 'Your enemy has not chance to block', 'Beautiful, that\'s be great attack'],
     enemyHit: ['Enemy hit You', 'Sorry, enemy kick your ass'],
-    draw: ['Enemy block your attack', 'You block enemy hit', 'You and Enemy block yours hits'],
+    draw: ['Enemy block your attack', 'You block enemy hit', 'You and Enemy block hits'],
 
 }
 
