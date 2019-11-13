@@ -14,6 +14,8 @@ const resultPlace = document.querySelector('.result');
 const allBtns = document.querySelectorAll('.buttons button');
 const playerHealthBar = document.querySelector('.yourScore .health .playerHit');
 const computerHealthBar = document.querySelector('.aiScore .health .enemyHit');
+const playerHitShow = document.querySelector('.playerChooseField .showHitValue');
+const computerHitShow = document.querySelector('.computerChooseField .showHitValue');
 
 let text = {
 
@@ -90,18 +92,22 @@ const checkResults = () => {
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit;
-        //        actualAiHealth -= 10;
+
         actualAiHealth -= randomHitDamage;
-        console.log(randomHitDamage);
+
+        computerHitShow.textContent = `${randomHitDamage} hit`;
+        computerHitShow.classList.add('animationHitValue');
         computerHealthBar.style.left = `-${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
         resultPlace.textContent = text.draw;
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit;
-        //        actualPlayerHealth -= 10;
+
         actualPlayerHealth -= randomHitDamage;
-        console.log(randomHitDamage);
+
+        playerHitShow.textContent = `${randomHitDamage} hit`;
+        playerHitShow.classList.add('animationHitValue');
         playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     }
 
@@ -132,6 +138,8 @@ for (const button of allBtns) {
         resultPlace.textContent = 'Who win?';
         document.querySelector('.playerChooseField').classList.remove('toRight');
         document.querySelector('.computerChooseField').classList.remove('toLeft');
+        playerHitShow.classList.remove('animationHitValue');
+        computerHitShow.classList.remove('animationHitValue');
     });
 }
 

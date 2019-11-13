@@ -160,6 +160,29 @@
  }
 
 
+ .showHitValue {
+     position: absolute;
+     z-index: 1;
+     font-size: 42px;
+     color: #ea0032;
+     font-weight: 700;
+     opacity: 0;
+ }
+
+ .playerChooseField .showHitValue {
+     right: 10%;
+     top: 35%;
+ }
+
+ .computerChooseField .showHitValue {
+     left: 10%;
+     top: 35%;
+ }
+
+ .animationHitValue {
+     animation: hitValueAnimation 1.5s;
+ }
+
  @media (max-width: 361px) {
      .buttons {
          max-width: 100%;
@@ -306,4 +329,25 @@
      .toLeft {
          transform: translateX(-30%);
      }
+ }
+
+
+ @keyframes hitValueAnimation {
+
+     0% {
+         opacity: 0;
+     }
+
+     30% {
+         opacity: 1;
+     }
+
+     70% {
+         opacity: 1;
+     }
+
+     100% {
+         opacity: 0;
+     }
+
  }
