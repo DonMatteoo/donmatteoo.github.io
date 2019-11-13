@@ -80,6 +80,7 @@
 
  }
 
+ /*
  .playerChooseField h2,
  .computerChooseField h2 {
      position: absolute;
@@ -88,6 +89,7 @@
      transform: translateX(-50%);
      margin: 20px;
  }
+*/
 
  .playerChooseField img.active,
  .computerChooseField img.active {
@@ -182,6 +184,29 @@
  .animationHitValue {
      animation: hitValueAnimation 1.5s;
  }
+
+
+
+ .handInfo {
+     position: absolute;
+     bottom: 120px;
+     left: 50%;
+     transform: translateX(-50%);
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 
  @media (max-width: 361px) {
      .buttons {

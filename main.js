@@ -43,7 +43,8 @@ const compChoose = () => {
         document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
     }
 
-    document.querySelector('.computerChooseField h2').textContent = `Enemy Choosed ${computerChoosed}`;
+    //    document.querySelector('.computerChooseField h2').textContent = `Enemy Choosed ${computerChoosed}`; 
+    document.querySelector('.handInfo').textContent = `Enemy Choosed ${computerChoosed}`;
     setTimeout(checkResults, 1000);
 }
 
@@ -87,7 +88,7 @@ const checkWin = () => {
 const checkResults = () => {
     let randomHitDamage = Math.floor(Math.random() * (maxHitDamage - minHitDamage + 1) + minHitDamage);
 
-
+    document.querySelector('.handInfo').textContent = "";
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
@@ -105,6 +106,8 @@ const checkResults = () => {
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit[Math.floor(Math.random() * text.enemyHit.length)];
+
+
         actualPlayerHealth -= randomHitDamage;
         if (randomHitDamage == maxHitDamage) {
             playerHitShow.textContent = `CRITICAL HIT! ${randomHitDamage}`;
@@ -138,7 +141,8 @@ for (const button of allBtns) {
         for (let i = 0; i < allImgs.length; i++) {
             allImgs[i].classList.remove('active');
         }
-        document.querySelector('.computerChooseField h2').textContent = "";
+        //        document.querySelector('.computerChooseField h2').textContent = "";
+        document.querySelector('.handInfo').textContent = "";
         resultPlace.textContent = 'Who win?';
         document.querySelector('.playerChooseField').classList.remove('toRight');
         document.querySelector('.computerChooseField').classList.remove('toLeft');
@@ -152,21 +156,24 @@ for (const button of allBtns) {
 document.querySelector('.rock').addEventListener('click', (e) => {
     playerChoosed = option[0];
     document.querySelector('.playerChooseField .rockImg').classList.add('active');
-    document.querySelector('.playerChooseField h2').textContent = `You Choosed ${playerChoosed}`;
+    //    document.querySelector('.playerChooseField h2').textContent = `You Choosed ${playerChoosed}`;
+    document.querySelector('.handInfo').textContent = `You Choosed ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
 document.querySelector('.paper').addEventListener('click', (e) => {
     playerChoosed = option[1];
     document.querySelector('.playerChooseField .paperImg').classList.add('active');
-    document.querySelector('.playerChooseField h2').textContent = `You Choosed ${playerChoosed}`;
+    //    document.querySelector('.playerChooseField h2').textContent = `You Choosed ${playerChoosed}`; 
+    document.querySelector('.handInfo').textContent = `You Choosed ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
 document.querySelector('.scissors').addEventListener('click', (e) => {
     playerChoosed = option[2]
     document.querySelector('.playerChooseField .scissorsImg').classList.add('active');
-    document.querySelector('.playerChooseField h2').textContent = `You Choosed ${playerChoosed}`;
+    //    document.querySelector('.playerChooseField h2').textContent = `You Choosed ${playerChoosed}`;
+    document.querySelector('.handInfo').textContent = `You Choosed ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
