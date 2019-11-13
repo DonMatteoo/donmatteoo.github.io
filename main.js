@@ -23,9 +23,9 @@ let text = {
     aiWinRound: 'Computer win round!',
     playerWinMatch: 'You win match!',
     aiWinMatch: 'Computer win Match!',
-    playerHit: 'You hit enemy.',
+    playerHit: ['You hit enemy.', 'Your enemy has not chance to block'],
     enemyHit: 'Enemy hit You',
-    draw: 'Enemy block your atack',
+    draw: ['Enemy block your attack', 'You block enemy hit', 'You and Enemy block yours hits'],
 
 }
 
@@ -90,13 +90,13 @@ const checkResults = () => {
 
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
-        resultPlace.textContent = text.playerHit;
+        resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
         actualAiHealth -= randomHitDamage;
         computerHitShow.textContent = `${randomHitDamage} hit`;
         computerHitShow.classList.add('animationHitValue');
         computerHealthBar.style.left = `-${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
-        resultPlace.textContent = text.draw;
+        resultPlace.textContent = text.draw[Math.floor(Math.random() * text.draw.length)];
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit;
