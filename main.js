@@ -1,3 +1,10 @@
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+/*******************************/
+
+
+
 let playerChoosed;
 let computerChoosed;
 const option = ['rock', 'paper', 'scissors'];
