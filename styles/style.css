@@ -31,10 +31,7 @@
 
  .buttons {
      position: relative;
-     /*     bottom: 10px;*/
-     /*     left: 50%;*/
-     /*     transform: translateX(-50%);*/
-     /*     max-width: 90%;*/
+
      display: flex;
      justify-content: space-around;
      z-index: 1;
@@ -195,8 +192,8 @@
 
  .menu i {
      position: absolute;
-     right: 20px;
-     bottom: 20px;
+     right: 5px;
+     bottom: 5px;
      font-size: 30px;
      transition: .5s;
      z-index: 1;
@@ -210,6 +207,7 @@
  .contentMenu {
      position: absolute;
      /*     right: -110%;*/
+     background: #275080;
      transition: .3s;
      height: 100%;
      bottom: 0;
@@ -217,7 +215,7 @@
  }
 
  .contentMenu.active {
-     right: 0;
+     right: 100%;
  }
 
  .reset {
