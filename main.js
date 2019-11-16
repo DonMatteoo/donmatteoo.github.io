@@ -1,7 +1,7 @@
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-/*******************************/
+window.onresize = function () {
+    document.body.height = window.innerHeight;
+}
+window.onresize(); // called to initially set the height.
 
 
 
