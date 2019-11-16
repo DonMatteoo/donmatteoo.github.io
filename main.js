@@ -1,5 +1,5 @@
 //window.onresize = function () {
-    document.body.style.height = `${window.innerHeight}px`;
+document.body.style.height = `${window.innerHeight}px`;
 //}
 //window.onresize();
 
@@ -49,27 +49,20 @@ const showMenu = () => {
 }
 
 const compChoose = () => {
-        let index = Math.floor(Math.random() * option.length);
-        computerChoosed = option[index];
+    let index = Math.floor(Math.random() * option.length);
+    computerChoosed = option[index];
 
-        if (computerChoosed === option[0]) {
-            document.querySelector('.computerChooseField .rockImg').classList.add('active');
-        } else if (computerChoosed === option[1]) {
-            document.querySelector('.computerChooseField .paperImg').classList.add('active');
-        } else {
-            document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
-        }
+    if (computerChoosed === option[0]) {
+        document.querySelector('.computerChooseField .rockImg').classList.add('active');
+    } else if (computerChoosed === option[1]) {
+        document.querySelector('.computerChooseField .paperImg').classList.add('active');
+    } else {
+        document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
+    }
 
-        //    document.querySelector('.computerChooseField h2').textContent = `
-        Enemy Choosed $ {
-            computerChoosed
-        }
-        `; 
-    document.querySelector('.handInfo').textContent = `
-        Enemy Choosed $ {
-            computerChoosed
-        }
-        `;
+    document.querySelector('.computerChooseField h2').textContent = `
+        Enemy Choosed ${computerChoosed}`;
+    document.querySelector('.handInfo').textContent = `Enemy Choosed${computerChoosed}`;
     setTimeout(checkResults, 1000);
 }
 
@@ -203,18 +196,18 @@ for (const button of allBtns) {
 
 
 document.querySelector('.rock').addEventListener('click', (e) => {
-    playerChoosed = option[0];
-    document.querySelector('.playerChooseField .rockImg').classList.add('active');
-    //    document.querySelector('.playerChooseField h2').textContent = `
-        You Choosed $ {
-            playerChoosed
-        }
-        `;
+            playerChoosed = option[0];
+            document.querySelector('.playerChooseField .rockImg').classList.add('active');
+            //    document.querySelector('.playerChooseField h2').textContent = `
+            You Choosed $ {
+                playerChoosed
+            }
+            `;
     document.querySelector('.handInfo').textContent = `
-        You Choosed $ {
-            playerChoosed
-        }
-        `;
+            You Choosed $ {
+                playerChoosed
+            }
+            `;
     setTimeout(compChoose, 2000);
 });
 
@@ -222,15 +215,15 @@ document.querySelector('.paper').addEventListener('click', (e) => {
     playerChoosed = option[1];
     document.querySelector('.playerChooseField .paperImg').classList.add('active');
     //    document.querySelector('.playerChooseField h2').textContent = `
-        You Choosed $ {
-            playerChoosed
-        }
-        `; 
+            You Choosed $ {
+                playerChoosed
+            }
+            `; 
     document.querySelector('.handInfo').textContent = `
-        You Choosed $ {
-            playerChoosed
-        }
-        `;
+            You Choosed $ {
+                playerChoosed
+            }
+            `;
     setTimeout(compChoose, 2000);
 });
 
@@ -238,15 +231,15 @@ document.querySelector('.scissors').addEventListener('click', (e) => {
     playerChoosed = option[2]
     document.querySelector('.playerChooseField .scissorsImg').classList.add('active');
     //    document.querySelector('.playerChooseField h2').textContent = `
-        You Choosed $ {
-            playerChoosed
-        }
-        `;
+            You Choosed $ {
+                playerChoosed
+            }
+            `;
     document.querySelector('.handInfo').textContent = `
-        You Choosed $ {
-            playerChoosed
-        }
-        `;
+            You Choosed $ {
+                playerChoosed
+            }
+            `;
     setTimeout(compChoose, 2000);
 });
 
@@ -260,11 +253,11 @@ document.querySelector('.reset').addEventListener('click', (e) => {
     actualPlayerHealth = 100;
     actualAiHealth = 100;
     playerHealthBar.style.right = ` - $ {
-            actualPlayerHealth
-        } % `;
+                actualPlayerHealth
+            } % `;
     computerHealthBar.style.left = ` - $ {
-            actualAiHealth
-        } % `;
+                actualAiHealth
+            } % `;
     resultPlace.textContent = 'Who win?';
 });
 
