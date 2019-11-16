@@ -181,7 +181,7 @@
 
  .menu {
      position: absolute;
-     width: 10%;
+     /*     width: 10%;*/
      height: 80vh;
      right: 0;
      bottom: 0;
@@ -203,7 +203,7 @@
 
  .contentMenu {
      position: absolute;
-     right: -110%;
+     /*     right: -110%;*/
      transition: .3s;
      height: 100%;
      bottom: 0;
