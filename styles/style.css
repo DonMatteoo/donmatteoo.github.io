@@ -8,17 +8,11 @@
      font-family: 'McLaren', cursive;
  }
 
- :root {
-     --vh: 100vh;
- }
+
 
  body {
      background-color: #275080;
      overflow-x: hidden;
-     height: 100vh;
-     /*adsdsdsdsdsds*/
-     height: calc(var(--vh, 1vh) * 100);
-     /*adsdsdsdsdsds*/
  }
 
  button {
