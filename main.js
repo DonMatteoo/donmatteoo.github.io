@@ -54,7 +54,7 @@ const compChoose = () => {
         document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
     }
 
-    document.querySelector('.handInfo').textContent = `Enemy Choosed${computerChoosed}`;
+    document.querySelector('.handInfo').textContent = `Enemy Choosed ${computerChoosed}`;
     setTimeout(checkResults, 1000);
 }
 
