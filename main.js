@@ -1,7 +1,7 @@
-window.onresize = function () {
+//window.onresize = function () {
     document.body.style.height = `${window.innerHeight}px`;
-}
-window.onresize();
+//}
+//window.onresize();
 
 
 let playerChoosed;
