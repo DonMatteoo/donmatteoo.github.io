@@ -275,12 +275,14 @@
      }
 
 
+/*
      .reset {
          left: 50%;
          transform: translateX(-50%);
          top: 0px;
          width: 120px;
      }
+*/
 
      .computerChooseField img,
      .playerChooseField img {
