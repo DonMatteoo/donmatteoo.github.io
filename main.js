@@ -60,8 +60,6 @@ const compChoose = () => {
         document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
     }
 
-    document.querySelector('.computerChooseField h2').textContent = `
-        Enemy Choosed ${computerChoosed}`;
     document.querySelector('.handInfo').textContent = `Enemy Choosed${computerChoosed}`;
     setTimeout(checkResults, 1000);
 }
@@ -116,23 +114,13 @@ const checkResults = () => {
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
         actualAiHealth -= randomHitDamage;
         if (randomHitDamage == maxHitDamage) {
-            computerHitShow.textContent = `
-        CRITICAL HIT!$ {
-            randomHitDamage
-        }
-        `;
+            computerHitShow.textContent = `CRITICAL HIT!${randomHitDamage}`;
         } else {
-            computerHitShow.textContent = `
-        $ {
-            randomHitDamage
-        }
-        hit `;
+            computerHitShow.textContent = `${randomHitDamage}hit`;
         }
 
         computerHitShow.classList.add('animationHitValue');
-        computerHealthBar.style.left = ` - $ {
-            actualAiHealth
-        } % `;
+        computerHealthBar.style.left = `-${actualAiHealth}%`;
     } else if (playerChoosed === computerChoosed) {
         resultPlace.textContent = text.draw[Math.floor(Math.random() * text.draw.length)];
     } else {
@@ -142,22 +130,12 @@ const checkResults = () => {
 
         actualPlayerHealth -= randomHitDamage;
         if (randomHitDamage == maxHitDamage) {
-            playerHitShow.textContent = `
-        CRITICAL HIT!$ {
-            randomHitDamage
-        }
-        `;
+            playerHitShow.textContent = `CRITICAL HIT!${randomHitDamage}`;
         } else {
-            playerHitShow.textContent = `
-        $ {
-            randomHitDamage
-        }
-        hit `;
+            playerHitShow.textContent = `${randomHitDamage}hit`;
         }
         playerHitShow.classList.add('animationHitValue');
-        playerHealthBar.style.right = ` - $ {
-            actualPlayerHealth
-        } % `;
+        playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     }
 
     document.querySelector('.playerScore').textContent = playerScore;
@@ -183,7 +161,6 @@ for (const button of allBtns) {
         for (let i = 0; i < allImgs.length; i++) {
             allImgs[i].classList.remove('active');
         }
-        //        document.querySelector('.computerChooseField h2').textContent = "";
         document.querySelector('.handInfo').textContent = "";
         resultPlace.textContent = 'Who win?';
         document.querySelector('.playerChooseField').classList.remove('toRight');
@@ -196,50 +173,26 @@ for (const button of allBtns) {
 
 
 document.querySelector('.rock').addEventListener('click', (e) => {
-            playerChoosed = option[0];
-            document.querySelector('.playerChooseField .rockImg').classList.add('active');
-            //    document.querySelector('.playerChooseField h2').textContent = `
-            You Choosed $ {
-                playerChoosed
-            }
-            `;
-    document.querySelector('.handInfo').textContent = `
-            You Choosed $ {
-                playerChoosed
-            }
-            `;
+    playerChoosed = option[0];
+    document.querySelector('.playerChooseField .rockImg').classList.add('active');
+
+    document.querySelector('.handInfo').textContent = `You Choosed ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
 document.querySelector('.paper').addEventListener('click', (e) => {
     playerChoosed = option[1];
     document.querySelector('.playerChooseField .paperImg').classList.add('active');
-    //    document.querySelector('.playerChooseField h2').textContent = `
-            You Choosed $ {
-                playerChoosed
-            }
-            `; 
-    document.querySelector('.handInfo').textContent = `
-            You Choosed $ {
-                playerChoosed
-            }
-            `;
+
+    document.querySelector('.handInfo').textContent = `You Choosed ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
 document.querySelector('.scissors').addEventListener('click', (e) => {
     playerChoosed = option[2]
     document.querySelector('.playerChooseField .scissorsImg').classList.add('active');
-    //    document.querySelector('.playerChooseField h2').textContent = `
-            You Choosed $ {
-                playerChoosed
-            }
-            `;
-    document.querySelector('.handInfo').textContent = `
-            You Choosed $ {
-                playerChoosed
-            }
-            `;
+
+    document.querySelector('.handInfo').textContent = `You Choosed ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
@@ -252,12 +205,8 @@ document.querySelector('.reset').addEventListener('click', (e) => {
     document.querySelector('.computerScore').textContent = computerScore;
     actualPlayerHealth = 100;
     actualAiHealth = 100;
-    playerHealthBar.style.right = ` - $ {
-                actualPlayerHealth
-            } % `;
-    computerHealthBar.style.left = ` - $ {
-                actualAiHealth
-            } % `;
+    playerHealthBar.style.right = `-${actualPlayerHealth}%`;
+    computerHealthBar.style.left = `-${actualAiHealth}%`;
     resultPlace.textContent = 'Who win?';
 });
 
