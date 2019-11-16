@@ -18,7 +18,7 @@
      border: 2px solid #fff;
      color: #fff;
      background-color: transparent;
-     margin: 10px 20px;
+     margin: 10px 5px;
      transition: 0.2s;
      width: 100px;
  }
@@ -30,13 +30,13 @@
  }
 
  .buttons {
-     position: absolute;
-     bottom: 20px;
-     left: 50%;
-     transform: translateX(-50%);
-     max-width: 60%;
+     position: relative;
+     /*     bottom: 10px;*/
+     /*     left: 50%;*/
+     /*     transform: translateX(-50%);*/
+     /*     max-width: 90%;*/
      display: flex;
-     justify-content: space-between;
+     justify-content: space-around;
      z-index: 1;
  }
 
@@ -47,7 +47,7 @@
      margin: 0 auto;
      display: flex;
      justify-content: center;
-     height: 50vh;
+     height: 57vh;
  }
 
  .battlefield div {
@@ -57,7 +57,7 @@
  .playerChooseField,
  .computerChooseField {
      position: relative;
-     width: 50%;
+     width: 100%;
      transition: 0.5s;
  }
 
@@ -70,7 +70,7 @@
      left: 50%;
      transform: translate(-50%, -50%);
      transition: 0.5s;
-
+     width: 100%;
  }
 
 
@@ -99,6 +99,7 @@
  .result {
      text-align: center;
      padding: 10px;
+     font-size: 20px;
 
  }
 
@@ -171,10 +172,15 @@
 
 
  .handInfo {
-     position: absolute;
-     bottom: 120px;
-     left: 50%;
-     transform: translateX(-50%);
+     /*     position: absolute;*/
+     /*     bottom: 120px;*/
+     /*     left: 50%;*/
+     /*     align-self: flex-end;*/
+     width: 100%;
+     /*     transform: translateX(-50%);*/
+     text-align: center;
+     height: 30px;
+
  }
 
  /*main menu*/
@@ -265,6 +271,11 @@
 
  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 
+ @media(min-width: 360px) {}
+
+
+
+ /*
  @media (max-width: 361px) {
      .buttons {
          max-width: 100%;
@@ -275,14 +286,12 @@
      }
 
 
-/*
      .reset {
          left: 50%;
          transform: translateX(-50%);
          top: 0px;
          width: 120px;
      }
-*/
 
      .computerChooseField img,
      .playerChooseField img {
@@ -414,6 +423,7 @@
          transform: translateX(-30%);
      }
  }
+*/
 
 
  @keyframes hitValueAnimation {
