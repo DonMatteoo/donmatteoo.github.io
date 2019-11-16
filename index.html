@@ -11,62 +11,62 @@
 
 <body>
 
-
-    <section class="scores">
-        <div class="yourScore">
-            <p>Win round:</p>
-            <h1 class="playerScore">0</h1>
-            <p>Your health:</p>
-            <div class="health"><span class="playerHit"></span></div>
-        </div>
-        <div class="aiScore">
-            <p>Win round:</p>
-            <h1 class="computerScore">0</h1>
-            <p>Enemy health:</p>
-            <div class="health"><span class="enemyHit"></span></div>
-        </div>
-    </section>
-
-    <h2 class="result">Who win?</h2>
-
-    <section class="battlefield">
-        <div class="playerChooseField">
-            <img class="rockImg" src="img/rock.png" alt="rock">
-            <img class="paperImg" src="img/paper.png" alt="paper">
-            <img class="scissorsImg" src="img/scissors.png" alt="scissors">
-            <p class="showHitValue">0</p>
-
-        </div>
-
-        <div class="computerChooseField">
-            <img class="rockImg" src="img/rockComp.png" alt="rock">
-            <img class="paperImg" src="img/paperComp.png" alt="paper">
-            <img class="scissorsImg" src="img/scissorsComp.png" alt="scissors">
-            <p class="showHitValue">0</p>
-        </div>
-
-    </section>
-    <h2 class="handInfo"></h2>
-    <section class="buttons">
-        <button class="rock">Rock</button>
-        <button class="paper">Paper</button>
-        <button class="scissors">Scissors</button>
-    </section>
-
-    <section class="menu"><i class="fas fa-cog"></i>
-        <aside class="contentMenu">
-            <p class="author">Author: <span>Mateo Borzym</span></p>
-            <div class="gamePreference">
-                <label for="round">Round number</label>
-                <input type="number" name="round" max="999" min="1" value="2" class="roundNumberOptions">
-                <input type="button" value="Save" class="saveOptions">
+    <div class="wrap">
+        <section class="scores">
+            <div class="yourScore">
+                <p>Win round:</p>
+                <h1 class="playerScore">0</h1>
+                <p>Your health:</p>
+                <div class="health"><span class="playerHit"></span></div>
             </div>
-            <button class="reset">Reset game</button>
-        </aside>
-    </section>
+            <div class="aiScore">
+                <p>Win round:</p>
+                <h1 class="computerScore">0</h1>
+                <p>Enemy health:</p>
+                <div class="health"><span class="enemyHit"></span></div>
+            </div>
+        </section>
+
+        <h2 class="result">Who win?</h2>
+
+        <section class="battlefield">
+            <div class="playerChooseField">
+                <img class="rockImg" src="img/rock.png" alt="rock">
+                <img class="paperImg" src="img/paper.png" alt="paper">
+                <img class="scissorsImg" src="img/scissors.png" alt="scissors">
+                <p class="showHitValue">0</p>
+
+            </div>
+
+            <div class="computerChooseField">
+                <img class="rockImg" src="img/rockComp.png" alt="rock">
+                <img class="paperImg" src="img/paperComp.png" alt="paper">
+                <img class="scissorsImg" src="img/scissorsComp.png" alt="scissors">
+                <p class="showHitValue">0</p>
+            </div>
+
+        </section>
+        <h2 class="handInfo"></h2>
+        <section class="buttons">
+            <button class="rock">Rock</button>
+            <button class="paper">Paper</button>
+            <button class="scissors">Scissors</button>
+        </section>
+
+        <section class="menu"><i class="fas fa-cog"></i>
+            <aside class="contentMenu">
+                <p class="author">Author: <span>Mateo Borzym</span></p>
+                <div class="gamePreference">
+                    <label for="round">Round number</label>
+                    <input type="number" name="round" max="999" min="1" value="2" class="roundNumberOptions">
+                    <input type="button" value="Save" class="saveOptions">
+                </div>
+                <button class="reset">Reset game</button>
+            </aside>
+        </section>
 
 
-
+    </div>
     <script src="main.js"></script>
     <script src="https://kit.fontawesome.com/99479a0e25.js" crossorigin="anonymous"></script>
 </body>
