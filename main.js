@@ -74,12 +74,8 @@ const checkWin = () => {
 
         actualPlayerHealth = 100;
         actualAiHealth = 100;
-        playerHealthBar.style.right = ` - $ {
-            actualPlayerHealth
-        } % `;
-        computerHealthBar.style.left = ` - $ {
-            actualAiHealth
-        } % `;
+        playerHealthBar.style.right = `-${actualPlayerHealth}%`;
+        computerHealthBar.style.left = `-${actualAiHealth}%`;
     }
 
     //Check who win Match
