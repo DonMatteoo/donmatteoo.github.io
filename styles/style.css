@@ -8,6 +8,10 @@
      font-family: 'McLaren', cursive;
  }
 
+ :root {
+     --vh: 100vh;
+ }
+
  body {
      background-color: #275080;
      overflow-x: hidden;
