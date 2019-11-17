@@ -229,9 +229,11 @@
  }
 
  .reset {
+     /*
      position: absolute;
      bottom: 60px;
      right: 10px;
+*/
  }
 
  .author {
@@ -249,10 +251,12 @@
  }
 
  .gamePreference {
+     /*
      position: absolute;
      right: 10px;
      bottom: 150px;
      margin: 10px;
+*/
  }
 
  .gamePreference label {
@@ -280,7 +284,34 @@
 
  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 
- @media(min-width: 360px) {}
+ @media(min-width: 360px) and (orientation: landscape) {
+     p {
+         font-size: 15px;
+     }
+
+     h2 {
+         font-size: 20px;
+     }
+
+     .playerChooseField img,
+     .computerChooseField img {
+         width: 60%;
+     }
+
+     .battlefield {
+         height: 30vh;
+     }
+
+     .menu {
+         height: 100vh;
+     }
+ }
+
+
+
+
+
+
 
 
 

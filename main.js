@@ -104,9 +104,9 @@ const checkResults = () => {
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
         actualAiHealth -= randomHitDamage;
         if (randomHitDamage == maxHitDamage) {
-            computerHitShow.textContent = `CRITICAL HIT!${randomHitDamage}`;
+            computerHitShow.textContent = `CRITICAL HIT! ${randomHitDamage}`;
         } else {
-            computerHitShow.textContent = `${randomHitDamage}hit`;
+            computerHitShow.textContent = `${randomHitDamage} hit`;
         }
 
         computerHitShow.classList.add('animationHitValue');
