@@ -43,8 +43,8 @@ let text = {
 
 
 
-const resetGame = () => {
-    alert('Gra została zresetowana');
+const resetGame = (messageForPlayer) => {
+    alert(messageForPlayer);
     playerScore = 0;
     computerScore = 0;
     document.querySelector('.playerScore').textContent = playerScore;
@@ -60,7 +60,7 @@ const resetGame = () => {
 const saveOptions = () => {
     maxRoundValue = roundNumberOptions.value;
     setHardLevel();
-    resetGame();
+    resetGame('W celu zapisu gra została zresetowana.');
 }
 
 const showMenu = () => {
@@ -240,7 +240,7 @@ document.querySelector('.scissors').addEventListener('click', (e) => {
 
 document.querySelector('.reset').addEventListener('click', (e) => {
     e.preventDefault();
-    resetGame();
+    resetGame('Gra została zresetowana.');
 });
 
 menuButton.addEventListener('click', showMenu);
