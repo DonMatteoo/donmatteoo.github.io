@@ -104,13 +104,13 @@
  .result {
      text-align: center;
      padding: 10px;
-     font-size: 20px;
-
  }
 
+ /*
  .active {
      display: block;
  }
+*/
 
  .toRight {
 
@@ -185,6 +185,7 @@
      /*     transform: translateX(-50%);*/
      text-align: center;
      height: 30px;
+     margin: 10px;
 
  }
 
@@ -192,7 +193,7 @@
 
  .menu {
      position: absolute;
-     /*     width: 10%;*/
+     /*     width: 30%;*/
      height: 80vh;
      right: 0;
      bottom: 0;
@@ -307,6 +308,41 @@
      }
  }
 
+
+ @media(min-width: 767px) {
+     p {
+         font-size: 20px;
+     }
+
+     h2 {
+         font-size: 35px;
+         padding: 30px;
+     }
+
+     .buttons {
+         max-width: 80%;
+         left: 50%;
+         transform: translateX(-50%);
+     }
+
+     .buttons button {
+         width: 150px;
+         padding: 30px;
+         font-size: 23px;
+     }
+
+     .menu.active {
+         width: 30%;
+     }
+
+     .menu i {
+         font-size: 50px;
+         right: 15px;
+         bottom: 15px;
+     }
+
+
+ }
 
 
 
