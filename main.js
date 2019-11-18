@@ -6,10 +6,13 @@ let playerScore = 0;
 let computerScore = 0;
 let actualPlayerHealth = 100;
 let actualAiHealth = 100;
-let maxHitDamage = 15;
-let minHitDamage = 5;
+let playerMaxHitDamage;
+let playerMinHitDamage;
+let enemyMaxHitDamage;
+let enemyMinHitDamage;
 let maxRoundValue = 2;
-let randomHitDamage;
+let playerRandomHitDamage;
+let enemyRandomHitDamage;
 let choosedHardLvl;
 
 const resultPlace = document.querySelector('.result');
@@ -100,33 +103,47 @@ const checkWin = () => {
 }
 
 const checkResults = () => {
-    randomHitDamage = Math.floor(Math.random() * (maxHitDamage - minHitDamage + 1) + minHitDamage);
+
+    if (choosedHardLvl == "easy") {
+        enemyMaxHitDamage = 10;
+        playerMinHitDamage = 10;
+    } else if (choosedHardLvl == "hard") {
+        playerMaxHitDamage = 10;
+        enemyMinHitDamage = 10;
+    } else {
+        playerMaxHitDamage = 15;
+        enemyMaxHitDamage = 15;
+        playerMinHitDamage = 5;
+        enemyMinHitDamage = 5;
+    }
+
+    playerRandomHitDamage = Math.floor(Math.random() * (playerMaxHitDamage - playerMinHitDamage + 1) + playerMinHitDamage);
+    enemyRandomHitDamage = Math.floor(Math.random() * (enemyMaxHitDamage - enemyMinHitDamage + 1) + enemyMinHitDamage);
 
     document.querySelector('.handInfo').textContent = "";
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
-        actualAiHealth -= randomHitDamage;
-        if (randomHitDamage == maxHitDamage) {
-            computerHitShow.textContent = `Krytyczne trafienie! ${randomHitDamage} pkt.`;
+        actualAiHealth -= playerRandomHitDamage;
+        if (playerRandomHitDamage == playerMaxHitDamage) {
+            computerHitShow.textContent = `Krytyczne trafienie! ${playerRandomHitDamage} pkt.`;
         } else {
-            computerHitShow.textContent = `${randomHitDamage} pkt.`;
+            computerHitShow.textContent = `${playerRandomHitDamage} pkt.`;
         }
 
         computerHitShow.classList.add('animationHitValue');
         computerHealthBar.style.left = `-${actualAiHealth}%`;
+
     } else if (playerChoosed === computerChoosed) {
         resultPlace.textContent = text.draw[Math.floor(Math.random() * text.draw.length)];
     } else {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit[Math.floor(Math.random() * text.enemyHit.length)];
-
-
-        actualPlayerHealth -= randomHitDamage;
-        if (randomHitDamage == maxHitDamage) {
-            playerHitShow.textContent = `Krytyczne trafienie! ${randomHitDamage} pkt.`;
+        actualPlayerHealth -= enemyRandomHitDamage;
+        if (enemyRandomHitDamage == enemyMaxHitDamage) {
+            playerHitShow.textContent = `Krytyczne trafienie! ${enemyRandomHitDamage} pkt.`;
         } else {
-            playerHitShow.textContent = `${randomHitDamage} pkt.`;
+            playerHitShow.textContent = `${enemyRandomHitDamage} pkt.`;
         }
         playerHitShow.classList.add('animationHitValue');
         playerHealthBar.style.right = `-${actualPlayerHealth}%`;
@@ -141,7 +158,7 @@ const checkResults = () => {
 
     checkWin();
 
-    return randomHitDamage;
+
 
 }
 
