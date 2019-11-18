@@ -143,7 +143,7 @@ const checkResults = () => {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
         actualAiHealth -= playerRandomHitDamage;
-        if (playerRandomHitDamage == playerMaxHitDamage) {
+        if (playerRandomHitDamage === playerMaxHitDamage) {
             computerHitShow.textContent = `Krytyczne trafienie! ${playerRandomHitDamage} pkt.`;
         } else {
             computerHitShow.textContent = `${playerRandomHitDamage} pkt.`;
@@ -158,7 +158,7 @@ const checkResults = () => {
         document.querySelector('.computerChooseField').classList.add('toLeft');
         resultPlace.textContent = text.enemyHit[Math.floor(Math.random() * text.enemyHit.length)];
         actualPlayerHealth -= enemyRandomHitDamage;
-        if (enemyRandomHitDamage == enemyMaxHitDamage) {
+        if (enemyRandomHitDamage === enemyMaxHitDamage) {
             playerHitShow.textContent = `Krytyczne trafienie! ${enemyRandomHitDamage} pkt.`;
         } else {
             playerHitShow.textContent = `${enemyRandomHitDamage} pkt.`;
