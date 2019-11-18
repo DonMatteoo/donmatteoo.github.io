@@ -44,7 +44,7 @@ let text = {
 
 
 const resetGame = () => {
-    alert(text.resetGame);
+    alert('Gra została zresetowana');
     playerScore = 0;
     computerScore = 0;
     document.querySelector('.playerScore').textContent = playerScore;
