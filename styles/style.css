@@ -114,12 +114,12 @@
 
  .toRight {
 
-     transform: translateX(50%);
+     transform: translateX(30%);
  }
 
  .toLeft {
 
-     transform: translateX(-50%);
+     transform: translateX(-30%);
  }
 
  .health {
@@ -202,7 +202,7 @@
  .menu i {
      position: absolute;
      right: 10px;
-     bottom: 5px;
+     bottom: 10px;
      font-size: 30px;
      transition: .5s;
      z-index: 2;
@@ -309,7 +309,7 @@
  }
 
 
- @media(min-width: 767px) {
+ @media(min-width: 768px) {
      p {
          font-size: 20px;
      }
@@ -317,6 +317,10 @@
      h2 {
          font-size: 35px;
          padding: 30px;
+     }
+
+     .battlefield {
+         height: 50vh;
      }
 
      .buttons {
