@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -18,20 +18,20 @@
     <div class="wrap">
         <section class="scores">
             <div class="yourScore">
-                <p>Win round:</p>
+                <p>Wygrane rundy:</p>
                 <h1 class="playerScore">0</h1>
-                <p>Your health:</p>
+                <p>Energia gracza:</p>
                 <div class="health"><span class="playerHit"></span></div>
             </div>
             <div class="aiScore">
-                <p>Win round:</p>
+                <p>Wygrane rundy:</p>
                 <h1 class="computerScore">0</h1>
-                <p>Enemy health:</p>
+                <p>Energia wroga:</p>
                 <div class="health"><span class="enemyHit"></span></div>
             </div>
         </section>
 
-        <h2 class="result">Who win?</h2>
+        <h2 class="result">Kto zwycięży?</h2>
 
         <section class="battlefield">
             <div class="playerChooseField">
@@ -52,20 +52,40 @@
         </section>
         <h2 class="handInfo"></h2>
         <section class="buttons">
-            <button class="rock">Rock</button>
-            <button class="paper">Paper</button>
-            <button class="scissors">Scissors</button>
+            <button class="rock">Kamień</button>
+            <button class="paper">Papier</button>
+            <button class="scissors">Nożyce</button>
         </section>
 
         <section class="menu"><i class="fas fa-cog"></i>
             <aside class="contentMenu">
                 <!--                <p class="author">Author: <span>Mateo Borzym</span></p>-->
                 <div class="gamePreference">
-                    <label for="round">Round number</label>
+
+                    <label for="hardLevel">Poziom trudności</label>
+                    <div class="levelHard">
+                        <div>
+
+                        </div>
+                        <div>
+                            <input type="radio" value="easy" name="hardLvl">
+                            <label for="easy">Łatwy</label>
+                            <input type="radio" value="normal" name="hardLvl" checked>
+                            <label for="normal">Normalny</label>
+                            <input type="radio" value="hard" name="hardLvl">
+                            <label for="hard">Trudny</label>
+                        </div>
+                        <div>
+
+                        </div>
+                    </div>
+                    <label for="round">Ilość rund</label>
                     <input type="number" name="round" max="999" min="1" value="2" class="roundNumberOptions">
-                    <input type="button" value="Save" class="saveOptions">
+                    <input type="button" value="Zapisz" class="saveOptions">
+
+
                 </div>
-                <button class="reset">Reset game</button>
+                <button class="reset">Reset gry</button>
             </aside>
         </section>
 
