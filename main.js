@@ -37,14 +37,32 @@ let text = {
     playerHit: ['Trafiłeś wroga.', 'Wróg nie miał szans na obronę.', 'Świetnie, to był dobry atak', 'Przeciwnik nie miał szans, brawo!'],
     enemyHit: ['Wróg Cię trafił.', 'Wybacz, komputer skopał Ci tyłek', 'Przeciwnik bez problemu Cię uderzył', 'No co jest? Umiesz się obronić?'],
     draw: ['Przeciwnik zablokował twój atak!', 'Obroniłeś się przed atakiem wroga.', 'Znowu remis? Nuuuuuuuudy...'],
+    resetGame: 'Gra została zresetowana',
+}
+
+
+
+
+const resetGame = () => {
+    alert(text.resetGame);
+    playerScore = 0;
+    computerScore = 0;
+    document.querySelector('.playerScore').textContent = playerScore;
+    document.querySelector('.computerScore').textContent = computerScore;
+    actualPlayerHealth = 100;
+    actualAiHealth = 100;
+    playerHealthBar.style.right = `-${actualPlayerHealth}%`;
+    computerHealthBar.style.left = `-${actualAiHealth}%`;
+    resultPlace.textContent = 'Kto zwycięży?';
 
 }
 
 const saveOptions = () => {
     maxRoundValue = roundNumberOptions.value;
     setHardLevel();
-
+    resetGame();
 }
+
 const showMenu = () => {
     menuContent.classList.toggle('active');
 }
@@ -222,16 +240,7 @@ document.querySelector('.scissors').addEventListener('click', (e) => {
 
 document.querySelector('.reset').addEventListener('click', (e) => {
     e.preventDefault();
-    alert('Zresetowałeś grę');
-    playerScore = 0;
-    computerScore = 0;
-    document.querySelector('.playerScore').textContent = playerScore;
-    document.querySelector('.computerScore').textContent = computerScore;
-    actualPlayerHealth = 100;
-    actualAiHealth = 100;
-    playerHealthBar.style.right = `-${actualPlayerHealth}%`;
-    computerHealthBar.style.left = `-${actualAiHealth}%`;
-    resultPlace.textContent = 'Kto zwycięży?';
+    resetGame();
 });
 
 menuButton.addEventListener('click', showMenu);

@@ -279,6 +279,11 @@
 
 
 
+ .roundNumberMenu,
+ .levelHard {
+     border-bottom: 2px solid #fff;
+     margin-bottom: 5px;
+ }
 
  .levelHard label {
      font-size: 14px;
@@ -351,161 +356,6 @@
  }
 
 
-
-
-
-
-
-
- /*
- @media (max-width: 361px) {
-     .buttons {
-         max-width: 100%;
-     }
-
-     button {
-         margin: 10px;
-     }
-
-
-     .reset {
-         left: 50%;
-         transform: translateX(-50%);
-         top: 0px;
-         width: 120px;
-     }
-
-     .computerChooseField img,
-     .playerChooseField img {
-         width: 80%;
-     }
-
-     .computerChooseField h2,
-     .playerChooseField h2 {
-         padding: 10px;
-         font-size: 20px;
-         margin: 0;
-     }
-
-     .toRight {
-
-         transform: translateX(25%);
-     }
-
-     .toLeft {
-
-         transform: translateX(-25%);
-     }
-
-     .result {
-         font-size: 18px;
-     }
-
-     .scores {
-         width: 95%;
-     }
-
-     .yourScore,
-     .aiScore {
-         width: 45%;
-     }
-
- }
-
- @media (max-width: 641px) {
-     .battlefield {
-         height: 40vh;
-         width: 100%;
-     }
-
-     .yourScore,
-     .aiScore {
-         width: 45%;
-     }
-
-
-     .computerChooseField img,
-     .playerChooseField img {
-         width: 70%;
-     }
-
-     .computerChooseField h2,
-     .playerChooseField h2 {
-         padding: 10px;
-         font-size: 20px;
-         margin: 5px;
-         width: 90%;
-     }
-
-     .buttons {
-         bottom: 0;
-     }
-
-     .toRight {
-         transform: translateX(25%);
-     }
-
-     .toLeft {
-         transform: translateX(-25%);
-     }
- }
-
- @media (max-width:769px) {
-
-
-     .yourScore,
-     .aiScore {
-         width: 45%;
-     }
-
-     .computerChooseField img,
-     .playerChooseField img {
-         width: 70%;
-     }
-
-     .toRight {
-         transform: translateX(40%);
-     }
-
-     .toLeft {
-         transform: translateX(-40%);
-     }
-
- }
-
- @media (max-width:1025px) {
-
-
-     .yourScore,
-     .aiScore {
-         width: 300px;
-     }
-
-     .computerChooseField img,
-     .playerChooseField img {
-         width: 70%;
-     }
-
-     .toRight {
-         transform: translateX(35%);
-     }
-
-     .toLeft {
-         transform: translateX(-35%);
-     }
-
- }
-
- @media (max-width:1401px) {
-     .toRight {
-         transform: translateX(30%);
-     }
-
-     .toLeft {
-         transform: translateX(-30%);
-     }
- }
-*/
 
 
  @keyframes hitValueAnimation {
