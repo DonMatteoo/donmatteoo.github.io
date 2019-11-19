@@ -138,7 +138,7 @@ const checkResults = () => {
     playerRandomHitDamage = Math.floor(Math.random() * (playerMaxHitDamage - playerMinHitDamage + 1) + playerMinHitDamage);
     enemyRandomHitDamage = Math.floor(Math.random() * (enemyMaxHitDamage - enemyMinHitDamage + 1) + enemyMinHitDamage);
 
-    document.querySelector('.handInfo').textContent = "";
+    //    document.querySelector('.handInfo').textContent = "";
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];

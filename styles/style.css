@@ -18,78 +18,28 @@
  .wrap {
      height: 100vh;
      height: calc(var(--vh, 1vh) * 100);
+
  }
 
-
- button {
-     padding: 10px;
-     border: 2px solid #fff;
-     color: #fff;
-     background-color: transparent;
-     margin: 10px 5px;
-     transition: 0.2s;
-     width: 100px;
- }
-
- button:hover {
-     color: #275080;
-     background-color: #fff;
-     cursor: pointer;
- }
-
- .buttons {
-     position: relative;
-
-     display: flex;
-     justify-content: space-around;
-     z-index: 1;
+ h2 {
+     font-size: 18px;
  }
 
 
 
- .battlefield {
-     width: 90%;
-     margin: 0 auto;
-     display: flex;
-     justify-content: center;
-     height: 47vh;
- }
-
- .battlefield div {
-     padding: 20px;
- }
-
- .playerChooseField,
- .computerChooseField {
-     position: relative;
-     width: 100%;
-     transition: 0.5s;
- }
-
- .playerChooseField img,
- .computerChooseField img {
-     opacity: 0;
-     transition: 0.5s;
-     position: absolute;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     transition: 0.5s;
-     width: 100%;
- }
 
 
- .playerChooseField img.active,
- .computerChooseField img.active {
-     opacity: 1;
- }
 
 
+
+
+ /*information about health and win rounds player and ai*/
  .scores {
      width: 90%;
      margin: 0 auto;
      display: flex;
      justify-content: space-between;
+     height: 20%;
  }
 
  .aiScore {
@@ -99,27 +49,6 @@
  .yourScore,
  .aiScore {
      width: 200px;
- }
-
- .result {
-     text-align: center;
-     padding: 10px;
- }
-
- /*
- .active {
-     display: block;
- }
-*/
-
- .toRight {
-
-     transform: translateX(30%);
- }
-
- .toLeft {
-
-     transform: translateX(-30%);
  }
 
  .health {
@@ -151,6 +80,86 @@
  }
 
 
+
+
+
+
+
+
+
+
+
+
+ /*information with fight text*/
+ .result {
+     text-align: center;
+     padding: 10px;
+     display: inline-block;
+     margin: 0 auto;
+     width: 100%;
+     height: 10%;
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+ /*Place with graphics and info about hit value*/
+ .battlefield {
+     width: 90%;
+     margin: 0 auto;
+     display: flex;
+     justify-content: center;
+     height: 45%;
+ }
+
+ .battlefield div {
+     padding: 20px;
+ }
+
+ .playerChooseField,
+ .computerChooseField {
+     position: relative;
+     width: 100%;
+     transition: 0.5s;
+ }
+
+ .playerChooseField img,
+ .computerChooseField img {
+     opacity: 0;
+     transition: 0.5s;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     transition: 0.5s;
+     width: 100%;
+ }
+
+
+ .playerChooseField img.active,
+ .computerChooseField img.active {
+     opacity: 1;
+ }
+
+ .toRight {
+
+     transform: translateX(30%);
+ }
+
+ .toLeft {
+
+     transform: translateX(-30%);
+ }
+
+
  .showHitValue {
      position: absolute;
      z-index: 1;
@@ -176,24 +185,62 @@
 
 
 
- .handInfo {
-     /*     position: absolute;*/
-     /*     bottom: 120px;*/
-     /*     left: 50%;*/
-     /*     align-self: flex-end;*/
-     width: 100%;
-     /*     transform: translateX(-50%);*/
-     text-align: center;
-     height: 30px;
-     margin: 10px;
 
+
+
+ /*Information about choosed hand player and ai*/
+ .handInfo {
+     width: 100%;
+     /*     margin: 10px;*/
+     display: inline-block;
+     height: 10%;
+     margin: 0 auto;
+     text-align: center;
  }
+
+
+
+
+
+
+
+
+ /*Buttons with hands*/
+ .buttons {
+     position: relative;
+     height: 15%;
+     display: flex;
+     justify-content: space-around;
+     z-index: 1;
+ }
+
+ button {
+     padding: 10px;
+     border: 2px solid #fff;
+     color: #fff;
+     background-color: transparent;
+     margin: 10px 5px;
+     transition: 0.2s;
+     width: 100px;
+     max-height: 50px;
+ }
+
+ button:hover {
+     color: #275080;
+     background-color: #fff;
+     cursor: pointer;
+ }
+
+
+
+
+
+
 
  /*main menu*/
 
  .menu {
      position: absolute;
-     /*     width: 30%;*/
      height: 80vh;
      right: 0;
      bottom: 0;
@@ -201,9 +248,9 @@
 
  .menu i {
      position: absolute;
-     right: 10px;
-     bottom: 10px;
-     font-size: 30px;
+     right: 5px;
+     bottom: 1px;
+     font-size: 25px;
      transition: .5s;
      z-index: 2;
  }
@@ -229,36 +276,6 @@
      right: 100%;
  }
 
- .reset {
-     /*
-     position: absolute;
-     bottom: 60px;
-     right: 10px;
-*/
- }
-
- .author {
-     /*     position: absolute;*/
-     display: inline-block;
-     top: 10px;
-     right: 10px;
-     margin: 20px;
-     text-align: left;
-     width: 100px;
- }
-
- .author span {
-     display: inline-block;
- }
-
- .gamePreference {
-     /*
-     position: absolute;
-     right: 10px;
-     bottom: 150px;
-     margin: 10px;
-*/
- }
 
  .gamePreference label {
      width: 100%;
@@ -277,8 +294,6 @@
      color: #275080;
  }
 
-
-
  .roundNumberMenu,
  .levelHard {
      border-bottom: 2px solid #fff;
@@ -292,13 +307,28 @@
 
  /*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
 
+
  @media(min-width: 360px) and (orientation: landscape) {
      p {
          font-size: 15px;
      }
 
+
      h2 {
-         font-size: 20px;
+         font-size: 17px;
+         padding: 20px;
+     }
+
+     h1 {
+         font-size: 18px;
+     }
+
+     .scores {
+         height: 25%;
+     }
+
+     .battlefield {
+         height: 30%;
      }
 
      .playerChooseField img,
@@ -306,12 +336,35 @@
          width: 60%;
      }
 
-     .battlefield {
-         height: 30vh;
+     .menu {
+         height: 100%;
      }
 
-     .menu {
-         height: 100vh;
+     .buttons {
+         height: 10%;
+     }
+
+     .buttons button {
+         min-height: 50px;
+     }
+
+     button.reset {
+         max-height: 30px;
+         margin: 0;
+     }
+
+     .gamePreference label {
+         font-size: 15px;
+     }
+
+     .gamePreference input {
+         margin: 5px;
+         padding: 5px;
+     }
+
+     .menu i {
+         right: 10px;
+         bottom: 10px;
      }
  }
 
@@ -326,20 +379,26 @@
          padding: 30px;
      }
 
+     .scores {
+         height: 15%;
+     }
+
      .battlefield {
-         height: 50vh;
+         height: 50%;
      }
 
      .buttons {
          max-width: 80%;
          left: 50%;
          transform: translateX(-50%);
+         height: 10%;
      }
 
      .buttons button {
          width: 150px;
          padding: 30px;
          font-size: 23px;
+         line-height: 10%;
      }
 
      .menu.active {
@@ -354,7 +413,6 @@
 
 
  }
-
 
 
 
