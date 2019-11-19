@@ -1,19 +1,18 @@
-let playerChoosed;
-let computerChoosed;
-const option = ['Kamień', 'Papier', 'Nożyce'];
+let playerChoosed, computerChoosed;
+const option = ['kamień', 'papier', 'nożyce'];
 
 let playerScore = 0;
 let computerScore = 0;
 let actualPlayerHealth = 100;
 let actualAiHealth = 100;
-let playerMaxHitDamage;
-let playerMinHitDamage;
-let enemyMaxHitDamage;
-let enemyMinHitDamage;
+let playerMaxHitDamage, playerMinHitDamage, enemyMaxHitDamage, enemyMinHitDamage;
 let maxRoundValue = 2;
-let playerRandomHitDamage;
-let enemyRandomHitDamage;
+let playerRandomHitDamage, enemyRandomHitDamage;
 let choosedHardLvl;
+
+
+
+
 
 const resultPlace = document.querySelector('.result');
 const allBtns = document.querySelectorAll('.buttons button');
@@ -27,18 +26,23 @@ const roundNumberOptions = document.querySelector('.roundNumberOptions');
 const saveOptionsButton = document.querySelector('.saveOptions');
 const hardLevelButtons = document.querySelectorAll('.levelHard input');
 
-
 let text = {
-
     playerWinRound: 'Wygrałeś rundę!',
     aiWinRound: 'Przeciwnik wygrał runde!',
     playerWinMatch: 'Wygrałeś mecz!',
     aiWinMatch: 'Komputer wygrał mecz!',
     playerHit: ['Trafiłeś wroga.', 'Wróg nie miał szans na obronę.', 'Świetnie, to był dobry atak', 'Przeciwnik nie miał szans, brawo!'],
-    enemyHit: ['Wróg Cię trafił.', 'Wybacz, komputer skopał Ci tyłek', 'Przeciwnik bez problemu Cię uderzył', 'No co jest? Umiesz się obronić?'],
+    enemyHit: ['Wróg Cię trafił.', 'Wybacz, komputer skopał Ci tyłek', 'Przeciwnik bez problemu Cię uderzył', 'Co jest? Nie umiesz się obronić?'],
     draw: ['Przeciwnik zablokował twój atak!', 'Obroniłeś się przed atakiem wroga.', 'Znowu remis? Nuuuuuuuudy...'],
     resetGame: 'Gra została zresetowana',
+    chooseHand: 'Wybierz dłoń:',
+    criticalHit: 'Trafienie krytyczne!',
+    youChose: 'Wybrałeś ',
+    enemyChoose: 'Wróg wybrał ',
+    whoWin: 'Kto zwycięży?',
 }
+
+
 
 
 
@@ -54,7 +58,6 @@ const resetGame = (messageForPlayer) => {
     playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     computerHealthBar.style.left = `-${actualAiHealth}%`;
     resultPlace.textContent = 'Kto zwycięży?';
-
 }
 
 const saveOptions = () => {
@@ -80,7 +83,7 @@ const compChoose = () => {
         document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
     }
 
-    document.querySelector('.handInfo').textContent = `Wróg wybrał ${computerChoosed}`;
+    document.querySelector('.handInfo').textContent = `${text.enemyChoose} ${computerChoosed}`;
     setTimeout(checkResults, 1000);
 }
 
@@ -107,13 +110,13 @@ const checkWin = () => {
     //Check who win Match
     if (computerScore == maxRoundValue || playerScore == maxRoundValue) {
         if (computerScore == maxRoundValue) {
-            alert('Wróg zwyciężył w pojedynku.');
+            alert(text.aiWinMatch);
             computerScore = 0;
             playerScore = 0;
 
 
         } else if (playerScore == maxRoundValue) {
-            alert('Wygrałeś mecz! Gratulacje!');
+            alert(text.playerWinMatch);
             computerScore = 0;
             playerScore = 0;
         }
@@ -139,13 +142,13 @@ const checkResults = () => {
     playerRandomHitDamage = Math.floor(Math.random() * (playerMaxHitDamage - playerMinHitDamage + 1) + playerMinHitDamage);
     enemyRandomHitDamage = Math.floor(Math.random() * (enemyMaxHitDamage - enemyMinHitDamage + 1) + enemyMinHitDamage);
 
-    //    document.querySelector('.handInfo').textContent = "";
+
     if (playerChoosed === option[0] && computerChoosed === option[2] || playerChoosed === option[1] && computerChoosed === option[0] || playerChoosed === option[2] && computerChoosed === option[1]) {
         document.querySelector('.playerChooseField').classList.add('toRight');
         resultPlace.textContent = text.playerHit[Math.floor(Math.random() * text.playerHit.length)];
         actualAiHealth -= playerRandomHitDamage;
         if (playerRandomHitDamage === playerMaxHitDamage) {
-            computerHitShow.textContent = `Krytyczne trafienie! ${playerRandomHitDamage} pkt.`;
+            computerHitShow.textContent = `${text.criticalHit} ${playerRandomHitDamage} pkt.`;
         } else {
             computerHitShow.textContent = `${playerRandomHitDamage} pkt.`;
         }
@@ -160,7 +163,7 @@ const checkResults = () => {
         resultPlace.textContent = text.enemyHit[Math.floor(Math.random() * text.enemyHit.length)];
         actualPlayerHealth -= enemyRandomHitDamage;
         if (enemyRandomHitDamage === enemyMaxHitDamage) {
-            playerHitShow.textContent = `Krytyczne trafienie! ${enemyRandomHitDamage} pkt.`;
+            playerHitShow.textContent = `${text.criticalHit} ${enemyRandomHitDamage} pkt.`;
         } else {
             playerHitShow.textContent = `${enemyRandomHitDamage} pkt.`;
         }
@@ -174,10 +177,8 @@ const checkResults = () => {
     for (let i = 0; i < allBtns.length; i++) {
         allBtns[i].removeAttribute('disabled');
     }
-
+    document.querySelector('.handInfo').textContent = text.chooseHand;
     checkWin();
-
-
 
 }
 
@@ -205,7 +206,7 @@ for (const button of allBtns) {
             allImgs[i].classList.remove('active');
         }
         document.querySelector('.handInfo').textContent = "";
-        resultPlace.textContent = 'Kto zwycięży?';
+        resultPlace.textContent = `${text.whoWin}`;
         document.querySelector('.playerChooseField').classList.remove('toRight');
         document.querySelector('.computerChooseField').classList.remove('toLeft');
         playerHitShow.classList.remove('animationHitValue');
@@ -219,7 +220,7 @@ document.querySelector('.rock').addEventListener('click', (e) => {
     playerChoosed = option[0];
     document.querySelector('.playerChooseField .rockImg').classList.add('active');
 
-    document.querySelector('.handInfo').textContent = `Wybrałeś ${playerChoosed}`;
+    document.querySelector('.handInfo').textContent = `${text.youChose} ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
@@ -227,15 +228,14 @@ document.querySelector('.paper').addEventListener('click', (e) => {
     playerChoosed = option[1];
     document.querySelector('.playerChooseField .paperImg').classList.add('active');
 
-    document.querySelector('.handInfo').textContent = `Wybrałeś ${playerChoosed}`;
+    document.querySelector('.handInfo').textContent = `${text.youChose} ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 
 document.querySelector('.scissors').addEventListener('click', (e) => {
     playerChoosed = option[2]
     document.querySelector('.playerChooseField .scissorsImg').classList.add('active');
-
-    document.querySelector('.handInfo').textContent = `Wybrałeś ${playerChoosed}`;
+    document.querySelector('.handInfo').textContent = `${text.youChose} ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
 

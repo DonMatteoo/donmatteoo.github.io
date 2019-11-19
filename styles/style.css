@@ -371,12 +371,16 @@
 
  @media(min-width: 768px) {
      p {
-         font-size: 20px;
+         font-size: 22px;
      }
 
      h2 {
          font-size: 35px;
          padding: 30px;
+     }
+
+     h1 {
+         font-size: 40px;
      }
 
      .scores {
@@ -415,6 +419,22 @@
          padding: 10px 0;
      }
 
+
+ }
+
+ @media(min-width: 360px) and (orientation: landscape) {
+
+     .scores {
+         height: 20%;
+     }
+
+     .battlefield {
+         height: 45%;
+     }
+
+     .handInfo {
+         height: 13%;
+     }
 
  }
 
