@@ -7,18 +7,7 @@
     <title>Rock-Paper-Scissors the Game</title>
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap&subset=latin-ext" rel="stylesheet">
     <link rel="stylesheet" href="styles/style.css">
-    <script>
-        let vh = window.innerHeight * 0.01;
-
-        document.documentElement.style.setProperty('--vh', `${vh}px`);
-
-
-        window.addEventListener('resize', () => {
-
-            let vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        });
-    </script>
+    <link rel="shortcut icon" href="img/fav.ico" />
 </head>
 
 <body>
@@ -38,9 +27,7 @@
                 <div class="health"><span class="enemyHit"></span></div>
             </div>
         </section>
-
         <h2 class="result">Kto zwycięży?</h2>
-
         <section class="battlefield">
             <div class="playerChooseField">
                 <img class="rockImg" src="img/rock.png" alt="rock">
@@ -49,32 +36,24 @@
                 <p class="showHitValue">0</p>
 
             </div>
-
             <div class="computerChooseField">
                 <img class="rockImg" src="img/rockComp.png" alt="rock">
                 <img class="paperImg" src="img/paperComp.png" alt="paper">
                 <img class="scissorsImg" src="img/scissorsComp.png" alt="scissors">
                 <p class="showHitValue">0</p>
             </div>
-
         </section>
-        <h2 class="handInfo">Wybierz dłoń</h2>
+        <h2 class="handInfo">Wybierz dłoń:</h2>
         <section class="buttons">
             <button class="rock">Kamień</button>
             <button class="paper">Papier</button>
             <button class="scissors">Nożyce</button>
         </section>
-
         <section class="menu"><i class="fas fa-cog"></i>
             <aside class="contentMenu">
-                <!--                <p class="author">Author: <span>Mateo Borzym</span></p>-->
                 <div class="gamePreference">
-
                     <label for="hardLevel">Poziom trudności</label>
                     <div class="levelHard">
-                        <div>
-
-                        </div>
                         <div>
                             <input type="radio" value="easy" name="hardLvl">
                             <label for="easy">Łatwy</label>
@@ -84,24 +63,34 @@
                             <label for="hard">Trudny</label>
                         </div>
                         <div>
-
                         </div>
                     </div>
                     <div class="roundNumberMenu">
                         <label for="round">Ilość rund</label>
                         <input type="number" name="round" max="999" min="1" value="2" class="roundNumberOptions">
-
                     </div>
                     <input type="button" value="Zapisz" class="saveOptions">
-
-
                 </div>
                 <button class="reset">Reset gry</button>
             </aside>
         </section>
-
-
     </div>
+    <script>
+        let vh = window.innerHeight * 0.01;
+
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+
+        window.addEventListener('resize', () => {
+
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        });
+
+    </script>
     <script src="main.js"></script>
+
     <script src="https://kit.fontawesome.com/99479a0e25.js" crossorigin="anonymous"></script>
-</body></html>
+</body>
+
+</html>
