@@ -241,9 +241,10 @@
 
  .menu {
      position: absolute;
-     height: 80vh;
+     height: 100%;
      right: 0;
      bottom: 0;
+     width: 100%;
  }
 
  .menu i {
@@ -262,18 +263,20 @@
 
  .contentMenu {
      position: absolute;
-     /*     right: -110%;*/
+     right: -100%;
      background-color: #275080;
      transition: .3s;
      height: 100%;
      bottom: 0;
      z-index: 1;
+     width: 100%;
      border: 2px white solid;
 
  }
 
  .contentMenu.active {
-     right: 100%;
+     right: 0%;
+     height:
  }
 
 
@@ -286,6 +289,7 @@
      border: 2px solid #fff;
      padding: 10px;
      margin: 10px;
+     text-align: center;
  }
 
  .saveOptions:hover {
@@ -348,10 +352,6 @@
          min-height: 50px;
      }
 
-     button.reset {
-         max-height: 30px;
-         margin: 0;
-     }
 
      .gamePreference label {
          font-size: 15px;
@@ -402,13 +402,17 @@
      }
 
      .menu.active {
-         width: 30%;
+         width: 50%;
      }
 
      .menu i {
          font-size: 50px;
          right: 15px;
          bottom: 15px;
+     }
+
+     .gamePreference input {
+         padding: 10px 0;
      }
 
 
