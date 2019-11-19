@@ -10,10 +10,6 @@ let maxRoundValue = 2;
 let playerRandomHitDamage, enemyRandomHitDamage;
 let choosedHardLvl;
 
-
-
-
-
 const resultPlace = document.querySelector('.result');
 const allBtns = document.querySelectorAll('.buttons button');
 const playerHealthBar = document.querySelector('.yourScore .health .playerHit');
@@ -41,11 +37,6 @@ let text = {
     enemyChoose: 'Wróg wybrał ',
     whoWin: 'Kto zwycięży?',
 }
-
-
-
-
-
 
 const resetGame = (messageForPlayer) => {
     alert(messageForPlayer);
@@ -89,7 +80,6 @@ const compChoose = () => {
 
 const checkWin = () => {
 
-    //check who win match
     if (actualPlayerHealth <= 0 || actualAiHealth <= 0) {
         if (actualPlayerHealth <= 0) {
             resultPlace.textContent = text.aiWinRound;
@@ -107,7 +97,6 @@ const checkWin = () => {
         computerHealthBar.style.left = `-${actualAiHealth}%`;
     }
 
-    //Check who win Match
     if (computerScore == maxRoundValue || playerScore == maxRoundValue) {
         if (computerScore == maxRoundValue) {
             alert(text.aiWinMatch);
@@ -194,6 +183,8 @@ const setHardLevel = () => {
 
 }
 
+
+
 // default actions for all buttons
 for (const button of allBtns) {
     button.addEventListener('click', (e) => {
@@ -211,23 +202,22 @@ for (const button of allBtns) {
         document.querySelector('.computerChooseField').classList.remove('toLeft');
         playerHitShow.classList.remove('animationHitValue');
         computerHitShow.classList.remove('animationHitValue');
+
     });
 }
-
 
 
 document.querySelector('.rock').addEventListener('click', (e) => {
     playerChoosed = option[0];
     document.querySelector('.playerChooseField .rockImg').classList.add('active');
-
     document.querySelector('.handInfo').textContent = `${text.youChose} ${playerChoosed}`;
     setTimeout(compChoose, 2000);
+    return playerChoosed;
 });
 
 document.querySelector('.paper').addEventListener('click', (e) => {
     playerChoosed = option[1];
     document.querySelector('.playerChooseField .paperImg').classList.add('active');
-
     document.querySelector('.handInfo').textContent = `${text.youChose} ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
@@ -238,6 +228,7 @@ document.querySelector('.scissors').addEventListener('click', (e) => {
     document.querySelector('.handInfo').textContent = `${text.youChose} ${playerChoosed}`;
     setTimeout(compChoose, 2000);
 });
+
 
 document.querySelector('.reset').addEventListener('click', (e) => {
     e.preventDefault();
