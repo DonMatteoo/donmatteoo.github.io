@@ -61,6 +61,7 @@ const saveOptions = () => {
     maxRoundValue = roundNumberOptions.value;
     setHardLevel();
     resetGame('W celu zapisu gra została zresetowana.');
+    showMenu();
 }
 
 const showMenu = () => {
