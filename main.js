@@ -28,8 +28,8 @@ let text = {
     playerWinMatch: 'Wygrałeś mecz!',
     aiWinMatch: 'Komputer wygrał mecz!',
     playerHit: ['Trafiłeś wroga.', 'Wróg nie miał szans na obronę.', 'Świetnie, to był dobry atak', 'Przeciwnik nie miał szans, brawo!'],
-    enemyHit: ['Wróg Cię trafił.', 'Wybacz, komputer skopał Ci tyłek', 'Przeciwnik bez problemu Cię uderzył', 'Co jest? Nie umiesz się obronić?'],
-    draw: ['Przeciwnik zablokował twój atak!', 'Obroniłeś się przed atakiem wroga.', 'Znowu remis? Nuuuuuuuudy...'],
+    enemyHit: ['Wróg Cię trafił.', 'Wybacz, komputer skopał Ci tyłek.', 'Przeciwnik trafił Cię bez problemu.', 'Co jest? Nie umiesz się obronić?'],
+    draw: ['Przeciwnik zablokował twój atak!', 'Obroniłeś się przed atakiem wroga.', 'Znowu remis? Nuuuudy...'],
     resetGame: 'Gra została zresetowana',
     chooseHand: 'Wybierz dłoń:',
     criticalHit: 'Trafienie krytyczne!',
@@ -48,7 +48,7 @@ const resetGame = (messageForPlayer) => {
     actualAiHealth = 100;
     playerHealthBar.style.right = `-${actualPlayerHealth}%`;
     computerHealthBar.style.left = `-${actualAiHealth}%`;
-    resultPlace.textContent = 'Kto zwycięży?';
+    resultPlace.textContent = text.whoWin;
 }
 
 const saveOptions = () => {
@@ -197,7 +197,7 @@ for (const button of allBtns) {
             allImgs[i].classList.remove('active');
         }
         document.querySelector('.handInfo').textContent = "";
-        resultPlace.textContent = `${text.whoWin}`;
+        resultPlace.textContent = text.whoWin;
         document.querySelector('.playerChooseField').classList.remove('toRight');
         document.querySelector('.computerChooseField').classList.remove('toLeft');
         playerHitShow.classList.remove('animationHitValue');
