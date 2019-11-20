@@ -65,7 +65,6 @@ const showMenu = () => {
 const compChoose = () => {
     let index = Math.floor(Math.random() * option.length);
     computerChoosed = option[index];
-
     if (computerChoosed === option[0]) {
         document.querySelector('.computerChooseField .rockImg').classList.add('active');
     } else if (computerChoosed === option[1]) {
@@ -73,7 +72,6 @@ const compChoose = () => {
     } else {
         document.querySelector('.computerChooseField .scissorsImg').classList.add('active');
     }
-
     document.querySelector('.handInfo').textContent = `${text.enemyChoose} ${computerChoosed}`;
     setTimeout(checkResults, 1000);
 }
@@ -90,7 +88,6 @@ const checkWin = () => {
             playerScore++;
             document.querySelector('.playerScore').textContent = playerScore;
         }
-
         actualPlayerHealth = 100;
         actualAiHealth = 100;
         playerHealthBar.style.right = `-${actualPlayerHealth}%`;
@@ -103,7 +100,6 @@ const checkWin = () => {
             computerScore = 0;
             playerScore = 0;
 
-
         } else if (playerScore == maxRoundValue) {
             alert(text.playerWinMatch);
             computerScore = 0;
@@ -114,7 +110,6 @@ const checkWin = () => {
 }
 
 const checkResults = () => {
-
     if (choosedHardLvl == "easy") {
         enemyMaxHitDamage = 10;
         playerMinHitDamage = 10;
@@ -212,7 +207,6 @@ document.querySelector('.rock').addEventListener('click', (e) => {
     document.querySelector('.playerChooseField .rockImg').classList.add('active');
     document.querySelector('.handInfo').textContent = `${text.youChose} ${playerChoosed}`;
     setTimeout(compChoose, 2000);
-    return playerChoosed;
 });
 
 document.querySelector('.paper').addEventListener('click', (e) => {
