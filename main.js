@@ -27,9 +27,17 @@ let text = {
     aiWinRound: 'Przeciwnik wygrał runde!',
     playerWinMatch: 'Wygrałeś mecz!',
     aiWinMatch: 'Komputer wygrał mecz!',
-    playerHit: ['Trafiłeś wroga.', 'Wróg nie miał szans na obronę.', 'Świetnie, to był dobry atak', 'Przeciwnik nie miał szans, brawo!'],
-    enemyHit: ['Wróg Cię trafił.', 'Wybacz, komputer skopał Ci tyłek.', 'Przeciwnik trafił Cię bez problemu.', 'Co jest? Nie umiesz się obronić?'],
-    draw: ['Przeciwnik zablokował twój atak!', 'Obroniłeś się przed atakiem wroga.', 'Znowu remis? Nuuuudy...'],
+    playerHit: ['Trafiłeś wroga.',
+                'Wróg nie miał szans na obronę.',
+                'Świetnie, to był dobry atak',
+                'Przeciwnik nie miał szans, brawo!'],
+    enemyHit: ['Wróg Cię trafił.',
+               'Wybacz, komputer skopał Ci tyłek.',
+               'Przeciwnik trafił Cię bez problemu.',
+               'Co jest? Nie umiesz się obronić?'],
+    draw: ['Przeciwnik zablokował twój atak!',
+           'Obroniłeś się przed atakiem wroga.',
+           'Znowu remis? Nuuuudy...'],
     resetGame: 'Gra została zresetowana',
     chooseHand: 'Wybierz dłoń:',
     criticalHit: 'Trafienie krytyczne!',
@@ -110,10 +118,10 @@ const checkWin = () => {
 }
 
 const checkResults = () => {
-    if (choosedHardLvl == "easy") {
+    if (choosedHardLvl == 'easy') {
         enemyMaxHitDamage = 10;
         playerMinHitDamage = 10;
-    } else if (choosedHardLvl == "hard") {
+    } else if (choosedHardLvl == 'hard') {
         playerMaxHitDamage = 10;
         enemyMinHitDamage = 10;
     } else {
@@ -191,7 +199,7 @@ for (const button of allBtns) {
         for (let i = 0; i < allImgs.length; i++) {
             allImgs[i].classList.remove('active');
         }
-        document.querySelector('.handInfo').textContent = "";
+        document.querySelector('.handInfo').textContent = '';
         resultPlace.textContent = text.whoWin;
         document.querySelector('.playerChooseField').classList.remove('toRight');
         document.querySelector('.computerChooseField').classList.remove('toLeft');
