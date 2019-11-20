@@ -336,6 +336,8 @@
  }
 
 
+
+
  @media(min-width: 768px) {
      p {
          font-size: 22px;
@@ -388,7 +390,7 @@
 
  }
 
- @media(min-width: 360px) and (orientation: landscape) {
+ @media(min-width: 1024px) and (orientation: landscape) {
 
      .scores {
          height: 20%;
